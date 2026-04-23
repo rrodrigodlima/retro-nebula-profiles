@@ -2,7 +2,7 @@ import { PixelPanel } from "@/components/PixelPanel";
 import { Top8Grid } from "@/components/Top8Grid";
 import { ProfileSong } from "@/components/ProfileSong";
 
-import spaceBg from "@/assets/space-bg.jpg";
+import spaceBg from "@/assets/word-sky-pattern.png";
 import cindAvatar from "@/assets/cind-avatar.png";
 import cindPortrait from "@/assets/cind-portrait.png";
 import cindMascot from "@/assets/cind-mascot.png";
@@ -11,17 +11,30 @@ import glitchStar from "@/assets/glitch-star.png";
 const Index = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden starfield">
-      {/* Deep space background */}
+      {/* Pastel pink dithered sky background */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${spaceBg})` }}
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, hsl(195 70% 78%) 0%, hsl(290 60% 80%) 45%, hsl(330 85% 78%) 100%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 opacity-70"
+        style={{
+          backgroundImage: `url(${spaceBg})`,
+          backgroundSize: "320px 320px",
+          backgroundRepeat: "repeat",
+          mixBlendMode: "screen",
+        }}
         aria-hidden
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 30%, hsl(var(--space-deep) / 0.2), hsl(var(--space-deep) / 0.85))",
+            "radial-gradient(ellipse at 50% 30%, hsl(0 0% 100% / 0.15), hsl(330 60% 70% / 0.25))",
         }}
         aria-hidden
       />
@@ -54,20 +67,20 @@ const Index = () => {
       <span className="absolute right-[12%] bottom-[20%] text-primary twinkle pixel-text text-sm">✦</span>
       <span className="absolute left-[8%] bottom-[12%] text-hot-pink twinkle pixel-text text-xs">+</span>
 
-      {/* Top nav strip */}
-      <header className="relative z-10 border-b-2 border-panel-edge/60 backdrop-blur-sm bg-space-deep/60">
+      {/* Top nav strip — pink chrome */}
+      <header className="relative z-10 border-b-2 border-[hsl(var(--panel-edge))] backdrop-blur-sm" style={{ background: "linear-gradient(180deg, hsl(330 90% 70%), hsl(330 85% 55%))" }}>
         <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center justify-between">
-          <h1 className="pixel-text text-base text-primary" style={{ textShadow: "0 0 10px hsl(var(--primary)/0.7)" }}>
-            ✦ STARNET ✦
+          <h1 className="pixel-text text-base text-white" style={{ textShadow: "1px 1px 0 hsl(var(--panel-edge-soft))" }}>
+            ♡ STARNET ♡
           </h1>
           <nav className="hidden sm:flex items-center gap-4">
-            <a className="menu-link" href="#">home</a>
-            <a className="menu-link" href="#">browse</a>
-            <a className="menu-link" href="#">mail</a>
-            <a className="menu-link" href="#">badges</a>
+            <a className="menu-link !text-white" href="#">home</a>
+            <a className="menu-link !text-white" href="#">browse</a>
+            <a className="menu-link !text-white" href="#">mail</a>
+            <a className="menu-link !text-white" href="#">badges</a>
           </nav>
-          <span className="digital-text text-sm text-muted-foreground">
-            online: <span className="text-primary">1,337,420</span>
+          <span className="digital-text text-sm text-white/90">
+            online: <span className="text-white font-bold">1,337,420</span>
           </span>
         </div>
       </header>
