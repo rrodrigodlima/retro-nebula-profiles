@@ -11,17 +11,30 @@ import glitchStar from "@/assets/glitch-star.png";
 const Index = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden starfield">
-      {/* Deep space background */}
+      {/* Pastel pink dithered sky background */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${spaceBg})` }}
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, hsl(195 70% 78%) 0%, hsl(290 60% 80%) 45%, hsl(330 85% 78%) 100%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 opacity-70"
+        style={{
+          backgroundImage: `url(${spaceBg})`,
+          backgroundSize: "320px 320px",
+          backgroundRepeat: "repeat",
+          mixBlendMode: "screen",
+        }}
         aria-hidden
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 30%, hsl(var(--space-deep) / 0.2), hsl(var(--space-deep) / 0.85))",
+            "radial-gradient(ellipse at 50% 30%, hsl(0 0% 100% / 0.15), hsl(330 60% 70% / 0.25))",
         }}
         aria-hidden
       />
