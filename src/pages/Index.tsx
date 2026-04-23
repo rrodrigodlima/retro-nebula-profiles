@@ -205,20 +205,23 @@ const Index = () => {
             <PixelPanel title="badges" variant="pink">
               <div className="grid grid-cols-3 gap-2 text-center">
                 {[
-                  { icon: "★", label: "stargazer", color: "gold" },
-                  { icon: "❤", label: "loved", color: "hot-pink" },
-                  { icon: "✦", label: "online", color: "primary" },
-                  { icon: "♪", label: "music", color: "hot-pink" },
-                  { icon: "✿", label: "cute", color: "hot-pink" },
-                  { icon: "✚", label: "healer", color: "gold" },
+                  { icon: "★", label: "stargazer", token: "--gold" },
+                  { icon: "❤", label: "loved", token: "--hot-pink" },
+                  { icon: "✦", label: "online", token: "--primary" },
+                  { icon: "♪", label: "music", token: "--hot-pink" },
+                  { icon: "✿", label: "cute", token: "--hot-pink" },
+                  { icon: "✚", label: "healer", token: "--gold" },
                 ].map((b) => (
                   <div
                     key={b.label}
                     className="border-2 border-panel-edge/70 p-2 bg-space-deep/60"
                   >
                     <div
-                      className={`pixel-text text-base text-${b.color}`}
-                      style={{ textShadow: `0 0 8px hsl(var(--${b.color})/0.8)` }}
+                      className="pixel-text text-base"
+                      style={{
+                        color: `hsl(var(${b.token}))`,
+                        textShadow: `0 0 8px hsl(var(${b.token})/0.8)`,
+                      }}
                     >
                       {b.icon}
                     </div>
