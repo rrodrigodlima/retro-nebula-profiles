@@ -63,22 +63,28 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        pixel: ['"Press Start 2P"', 'monospace'],
+        digital: ['VT323', 'monospace'],
+        silk: ['Silkscreen', 'monospace'],
+      },
+      colors: {
+        // local extras (in addition to base)
+        'space-deep': 'hsl(var(--space-deep))',
+        'space-mid': 'hsl(var(--space-mid))',
+        panel: 'hsl(var(--panel))',
+        'panel-edge': 'hsl(var(--panel-edge))',
+        'hot-pink': 'hsl(var(--hot-pink))',
+        gold: 'hsl(var(--gold))',
+      } as any,
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
