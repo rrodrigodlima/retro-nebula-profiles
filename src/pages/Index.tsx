@@ -1,16 +1,267 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { PixelPanel } from "@/components/PixelPanel";
+import { Top8Grid } from "@/components/Top8Grid";
+import { ProfileSong } from "@/components/ProfileSong";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+import spaceBg from "@/assets/space-bg.jpg";
+import cindAvatar from "@/assets/cind-avatar.png";
+import cindPortrait from "@/assets/cind-portrait.png";
+import cindMascot from "@/assets/cind-mascot.png";
+import glitchStar from "@/assets/glitch-star.png";
+
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="relative min-h-screen w-full overflow-hidden starfield">
+      {/* Deep space background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${spaceBg})` }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 30%, hsl(var(--space-deep) / 0.2), hsl(var(--space-deep) / 0.85))",
+        }}
+        aria-hidden
+      />
+
+      {/* Floating decorative art — glitch star (left) */}
+      <img
+        src={glitchStar}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        width={420}
+        height={420}
+        className="hidden md:block absolute -left-12 top-32 w-[280px] lg:w-[360px] glitch-pulse float-slow z-0 opacity-90 pointer-events-none"
+      />
+
+      {/* Floating mascot (right) */}
+      <img
+        src={cindMascot}
+        alt="cind mascot waving"
+        loading="lazy"
+        width={280}
+        height={280}
+        className="hidden lg:block absolute right-4 top-40 w-[220px] xl:w-[260px] float-med z-0 pointer-events-none drop-shadow-[0_0_24px_hsl(var(--hot-pink)/0.5)]"
+      />
+
+      {/* tiny twinkling stars */}
+      <span className="absolute left-[18%] top-[8%] text-primary twinkle pixel-text text-xs">+</span>
+      <span className="absolute right-[28%] top-[14%] text-hot-pink twinkle pixel-text text-sm">✦</span>
+      <span className="absolute left-[42%] top-[6%] text-gold twinkle pixel-text text-[10px]">+</span>
+      <span className="absolute right-[12%] bottom-[20%] text-primary twinkle pixel-text text-sm">✦</span>
+      <span className="absolute left-[8%] bottom-[12%] text-hot-pink twinkle pixel-text text-xs">+</span>
+
+      {/* Top nav strip */}
+      <header className="relative z-10 border-b-2 border-panel-edge/60 backdrop-blur-sm bg-space-deep/60">
+        <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center justify-between">
+          <h1 className="pixel-text text-base text-primary" style={{ textShadow: "0 0 10px hsl(var(--primary)/0.7)" }}>
+            ✦ STARNET ✦
+          </h1>
+          <nav className="hidden sm:flex items-center gap-4">
+            <a className="menu-link" href="#">home</a>
+            <a className="menu-link" href="#">browse</a>
+            <a className="menu-link" href="#">mail</a>
+            <a className="menu-link" href="#">badges</a>
+          </nav>
+          <span className="digital-text text-sm text-muted-foreground">
+            online: <span className="text-primary">1,337,420</span>
+          </span>
+        </div>
+      </header>
+
+      {/* Profile grid */}
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 py-8">
+        <div className="grid grid-cols-12 gap-4">
+          {/* ===== LEFT COLUMN ===== */}
+          <div className="col-span-12 md:col-span-4 lg:col-span-3 space-y-4">
+            {/* Profile panel */}
+            <PixelPanel title="cind" variant="pink">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-full aspect-square border-2 border-hot-pink bg-space-deep p-1"
+                     style={{ boxShadow: "0 0 18px hsl(var(--hot-pink)/0.5)" }}>
+                  <img
+                    src={cindAvatar}
+                    alt="pixel art portrait of cind crying with a rainbow star"
+                    width={512}
+                    height={512}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="text-center w-full">
+                  <p className="pixel-text text-xs text-foreground">cind</p>
+                  <p className="digital-text text-base text-muted-foreground">@cind</p>
+                  <p className="digital-text text-base mt-2" style={{ color: "hsl(var(--rainbow-red))" }}>
+                    "not a fish" 🐟 👽
+                  </p>
+                </div>
+
+                <div className="w-full border-t-2 border-dashed border-panel-edge/50 pt-2 flex items-center justify-center gap-2">
+                  <span className="pixel-text text-[10px] text-gold" style={{ textShadow: "0 0 6px hsl(var(--gold)/0.8)" }}>★</span>
+                  <span className="digital-text text-base text-foreground">177 badges received</span>
+                </div>
+
+                <button className="pixel-btn w-full justify-center">message</button>
+
+                {/* mood / status pixel chips */}
+                <div className="w-full grid grid-cols-2 gap-1 pt-1">
+                  <div className="border border-panel-edge/60 px-2 py-1 digital-text text-xs flex justify-between">
+                    <span className="text-muted-foreground">mood</span>
+                    <span className="text-hot-pink">stargazing</span>
+                  </div>
+                  <div className="border border-panel-edge/60 px-2 py-1 digital-text text-xs flex justify-between">
+                    <span className="text-muted-foreground">orbit</span>
+                    <span className="text-primary">low</span>
+                  </div>
+                </div>
+              </div>
+            </PixelPanel>
+
+            {/* Photos panel */}
+            <PixelPanel title="cind's Photos" rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}>
+              <div className="border-2 border-dashed border-panel-edge/50 p-6 text-center digital-text text-base text-muted-foreground bg-space-deep/50">
+                <span className="block text-2xl mb-1">📷</span>
+                No photos yet
+              </div>
+            </PixelPanel>
+          </div>
+
+          {/* ===== CENTER COLUMN ===== */}
+          <div className="col-span-12 md:col-span-8 lg:col-span-6 space-y-4">
+            {/* Lore & Blurbs combined */}
+            <PixelPanel title={<span>cind's Lore <span className="opacity-60">/</span> cind's Blurbs</span>}>
+              <div className="relative">
+                {/* Portrait */}
+                <div className="relative mx-auto w-full max-w-md aspect-square border-2 border-panel-edge bg-space-deep overflow-hidden"
+                     style={{ boxShadow: "inset 0 0 40px hsl(var(--space-deep))" }}>
+                  <img
+                    src={cindPortrait}
+                    alt="large pixel art portrait of cind, dreamy and soft"
+                    width={768}
+                    height={768}
+                    className="w-full h-full object-contain"
+                  />
+
+                  {/* Lore widget overlay (top) */}
+                  <div className="absolute top-2 left-2 right-12 pixel-panel pixel-panel-pink !shadow-none p-2"
+                       style={{ boxShadow: "0 0 14px hsl(var(--hot-pink)/0.6)" }}>
+                    <p className="pixel-text text-[8px] text-hot-pink mb-1">// LORE</p>
+                    <p className="digital-text text-base leading-tight text-foreground">
+                      css broke... lazy to fix{" "}
+                      <span className="text-muted-foreground">(oh it fixed itself, hai everynyan)</span>
+                    </p>
+                  </div>
+
+                  {/* Blurbs widget overlay (bottom) */}
+                  <div className="absolute bottom-2 left-12 right-2 pixel-panel !shadow-none p-2"
+                       style={{ boxShadow: "0 0 14px hsl(var(--primary)/0.6)" }}>
+                    <p className="pixel-text text-[8px] text-primary mb-1">// BLURBS</p>
+                    <p className="digital-text text-base text-foreground">
+                      ./reaching the stars ./
+                    </p>
+                  </div>
+
+                  {/* corner sparkles */}
+                  <span className="absolute top-1/3 right-3 text-gold pixel-text text-base twinkle">✦</span>
+                  <span className="absolute bottom-1/3 left-3 text-hot-pink pixel-text text-xs twinkle">+</span>
+                </div>
+
+                {/* Footer menu links */}
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 justify-center">
+                  <a className="menu-link" href="#">View Journals</a>
+                  <span className="text-muted-foreground">|</span>
+                  <a className="menu-link" href="#">View Photos</a>
+                  <span className="text-muted-foreground">|</span>
+                  <a className="menu-link" href="#">View Groups</a>
+                  <span className="text-muted-foreground">|</span>
+                  <a className="menu-link" href="#">View Places</a>
+                </div>
+              </div>
+            </PixelPanel>
+
+            {/* Profile song */}
+            <PixelPanel
+              title={<span>♪ cind's Profile Song</span>}
+              variant="pink"
+              rightSlot={<span className="text-hot-pink">▶ now playing</span>}
+            >
+              <ProfileSong />
+            </PixelPanel>
+          </div>
+
+          {/* ===== RIGHT COLUMN ===== */}
+          <div className="col-span-12 lg:col-span-3 space-y-4">
+            {/* Top 8 */}
+            <PixelPanel
+              title="cind's Top 8"
+              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
+            >
+              <Top8Grid />
+            </PixelPanel>
+
+            {/* Badges showcase */}
+            <PixelPanel title="badges" variant="pink">
+              <div className="grid grid-cols-3 gap-2 text-center">
+                {[
+                  { icon: "★", label: "stargazer", token: "--gold" },
+                  { icon: "❤", label: "loved", token: "--hot-pink" },
+                  { icon: "✦", label: "online", token: "--primary" },
+                  { icon: "♪", label: "music", token: "--hot-pink" },
+                  { icon: "✿", label: "cute", token: "--hot-pink" },
+                  { icon: "✚", label: "healer", token: "--gold" },
+                ].map((b) => (
+                  <div
+                    key={b.label}
+                    className="border-2 border-panel-edge/70 p-2 bg-space-deep/60"
+                  >
+                    <div
+                      className="pixel-text text-base"
+                      style={{
+                        color: `hsl(var(${b.token}))`,
+                        textShadow: `0 0 8px hsl(var(${b.token})/0.8)`,
+                      }}
+                    >
+                      {b.icon}
+                    </div>
+                    <p className="digital-text text-xs text-muted-foreground mt-1">
+                      {b.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </PixelPanel>
+
+            {/* Visitors */}
+            <PixelPanel title="recent visitors">
+              <ul className="space-y-1 digital-text text-sm">
+                {[
+                  ["✦", "starboy_99", "1m ago"],
+                  ["✿", "milkii", "12m ago"],
+                  ["♥", "antenna.exe", "44m ago"],
+                  ["★", "lemi", "2h ago"],
+                ].map(([ic, name, time]) => (
+                  <li key={name as string} className="flex items-center justify-between border-b border-panel-edge/30 pb-1">
+                    <span><span className="text-hot-pink mr-1">{ic}</span><span className="text-primary">{name}</span></span>
+                    <span className="text-muted-foreground text-xs">{time}</span>
+                  </li>
+                ))}
+              </ul>
+            </PixelPanel>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-10 text-center digital-text text-sm text-muted-foreground">
+          <p>
+            © 2003-∞ STARNET — <span className="rainbow-text font-bold">a place for friends across the galaxy</span>
+          </p>
+          <p className="pixel-text text-[8px] mt-2 opacity-60">v1.6.4 // signal: ★★★☆☆</p>
+        </footer>
+      </div>
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
