@@ -57,6 +57,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        'space-deep': "hsl(var(--space-deep))",
+        'space-mid': "hsl(var(--space-mid))",
+        panel: "hsl(var(--panel))",
+        'panel-edge': "hsl(var(--panel-edge))",
+        'hot-pink': "hsl(var(--hot-pink))",
+        gold: "hsl(var(--gold))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -68,15 +74,6 @@ export default {
         digital: ['VT323', 'monospace'],
         silk: ['Silkscreen', 'monospace'],
       },
-      colors: {
-        // local extras (in addition to base)
-        'space-deep': 'hsl(var(--space-deep))',
-        'space-mid': 'hsl(var(--space-mid))',
-        panel: 'hsl(var(--panel))',
-        'panel-edge': 'hsl(var(--panel-edge))',
-        'hot-pink': 'hsl(var(--hot-pink))',
-        gold: 'hsl(var(--gold))',
-      } as any,
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
