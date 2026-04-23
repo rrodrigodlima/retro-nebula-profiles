@@ -3,73 +3,78 @@
 @tailwind utilities;
 
 /* ============================================================
-   cind — retro-futuristic 16-bit space profile design system
+   cind — Y2K KAWAII pixel design system
+   Pink pastel skies, pixelated clouds, bevel borders.
    All colors HSL.
    ============================================================ */
 
 @layer base {
   :root {
-    /* deep space palette */
-    --background: 220 60% 6%;
-    --foreground: 200 40% 96%;
+    /* pastel pink sky palette */
+    --background: 335 75% 86%;
+    --foreground: 330 70% 18%;
 
-    --card: 215 55% 10%;
-    --card-foreground: 200 40% 96%;
+    --card: 340 80% 94%;
+    --card-foreground: 330 70% 18%;
 
-    --popover: 215 55% 10%;
-    --popover-foreground: 200 40% 96%;
+    --popover: 340 80% 94%;
+    --popover-foreground: 330 70% 18%;
 
-    /* cyan / teal primary */
-    --primary: 188 95% 60%;
-    --primary-foreground: 220 60% 6%;
+    /* hot pink primary */
+    --primary: 330 90% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    /* deep teal */
-    --secondary: 195 70% 18%;
-    --secondary-foreground: 200 40% 96%;
+    /* soft lilac */
+    --secondary: 290 55% 80%;
+    --secondary-foreground: 330 70% 18%;
 
-    --muted: 215 40% 14%;
-    --muted-foreground: 200 25% 70%;
+    --muted: 335 50% 88%;
+    --muted-foreground: 330 35% 40%;
 
-    --accent: 320 85% 70%;
-    --accent-foreground: 220 60% 6%;
+    --accent: 195 70% 70%;
+    --accent-foreground: 330 70% 18%;
 
-    --destructive: 0 90% 62%;
-    --destructive-foreground: 200 40% 96%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 188 80% 45%;
-    --input: 215 40% 18%;
-    --ring: 188 95% 60%;
+    --border: 330 60% 55%;
+    --input: 0 0% 100%;
+    --ring: 330 90% 55%;
 
     --radius: 0;
 
-    /* extended profile tokens */
-    --space-deep: 230 70% 4%;
-    --space-mid: 215 55% 10%;
-    --panel: 215 60% 12%;
-    --panel-edge: 188 95% 55%;
-    --panel-edge-soft: 195 70% 35%;
-    --hot-pink: 330 90% 65%;
-    --rainbow-red: 0 95% 65%;
+    /* extended profile tokens — re-skinned for pink */
+    --space-deep: 335 65% 78%;       /* deep "sky" lilac */
+    --space-mid: 340 75% 88%;
+    --panel: 340 80% 94%;
+    --panel-edge: 330 80% 50%;       /* hot pink edge */
+    --panel-edge-soft: 330 60% 35%;  /* shadow pink */
+    --hot-pink: 330 95% 60%;
+    --rainbow-red: 0 90% 60%;
     --rainbow-yellow: 50 95% 60%;
-    --rainbow-green: 140 75% 55%;
-    --rainbow-blue: 210 95% 65%;
-    --rainbow-purple: 280 80% 65%;
-    --gold: 45 95% 60%;
+    --rainbow-green: 140 70% 55%;
+    --rainbow-blue: 200 90% 65%;
+    --rainbow-purple: 280 75% 65%;
+    --gold: 45 95% 55%;
 
-    --shadow-glow: 0 0 0 2px hsl(var(--panel-edge) / 0.6),
-                   0 0 24px hsl(var(--panel-edge) / 0.35),
-                   0 0 60px hsl(var(--panel-edge) / 0.15);
-    --shadow-glow-pink: 0 0 0 2px hsl(var(--hot-pink) / 0.7),
-                        0 0 24px hsl(var(--hot-pink) / 0.35);
+    /* bevel shadows — Win2k chrome but pink */
+    --bevel-light: 0 0% 100%;
+    --bevel-dark: 330 60% 30%;
 
-    --sidebar-background: 215 55% 10%;
-    --sidebar-foreground: 200 40% 96%;
-    --sidebar-primary: 188 95% 60%;
-    --sidebar-primary-foreground: 220 60% 6%;
-    --sidebar-accent: 215 40% 14%;
-    --sidebar-accent-foreground: 200 40% 96%;
-    --sidebar-border: 188 80% 45%;
-    --sidebar-ring: 188 95% 60%;
+    --shadow-glow: 2px 2px 0 0 hsl(var(--bevel-dark) / 0.5),
+                   inset 1px 1px 0 0 hsl(var(--bevel-light));
+    --shadow-glow-pink: 3px 3px 0 0 hsl(var(--bevel-dark) / 0.55),
+                        inset 1px 1px 0 0 hsl(var(--bevel-light)),
+                        0 0 18px hsl(var(--hot-pink) / 0.4);
+
+    --sidebar-background: 340 80% 94%;
+    --sidebar-foreground: 330 70% 18%;
+    --sidebar-primary: 330 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 335 50% 88%;
+    --sidebar-accent-foreground: 330 70% 18%;
+    --sidebar-border: 330 60% 55%;
+    --sidebar-ring: 330 90% 55%;
   }
 }
 
@@ -82,115 +87,137 @@
   }
 
   html, body, #root {
-    @apply bg-background text-foreground;
-    font-family: 'VT323', monospace;
+    @apply text-foreground;
+    font-family: 'VT323', 'MS Sans Serif', monospace;
     font-size: 18px;
     letter-spacing: 0.02em;
+    /* Pink dithered desktop backdrop */
+    background-color: hsl(335 75% 86%);
+    background-image:
+      repeating-linear-gradient(45deg,
+        hsl(330 70% 88%) 0 6px,
+        hsl(335 80% 92%) 6px 12px);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Press Start 2P', system-ui, monospace;
     letter-spacing: 0;
+    color: hsl(var(--foreground));
   }
 }
 
 @layer components {
-  /* pixel panel — neon bordered window */
+  /* pixel panel — Win2k bevel window with pink chrome */
   .pixel-panel {
     @apply relative bg-card text-card-foreground;
-    border: 2px solid hsl(var(--panel-edge));
-    box-shadow: var(--shadow-glow);
+    border-top: 2px solid hsl(var(--bevel-light));
+    border-left: 2px solid hsl(var(--bevel-light));
+    border-right: 2px solid hsl(var(--bevel-dark));
+    border-bottom: 2px solid hsl(var(--bevel-dark));
+    box-shadow:
+      3px 3px 0 0 hsl(var(--bevel-dark) / 0.45),
+      0 0 0 1px hsl(var(--panel-edge) / 0.6);
   }
   .pixel-panel-pink {
-    border-color: hsl(var(--hot-pink));
-    box-shadow: var(--shadow-glow-pink);
+    box-shadow:
+      3px 3px 0 0 hsl(var(--bevel-dark) / 0.55),
+      0 0 0 1px hsl(var(--hot-pink)),
+      0 0 16px hsl(var(--hot-pink) / 0.35);
   }
   .pixel-panel-header {
     @apply px-3 py-2 flex items-center justify-between;
     background: linear-gradient(180deg,
-      hsl(var(--panel-edge) / 0.35),
-      hsl(var(--panel-edge) / 0.1));
-    border-bottom: 2px solid hsl(var(--panel-edge));
+      hsl(330 90% 70%),
+      hsl(330 85% 55%));
+    border-bottom: 1px solid hsl(var(--panel-edge-soft));
+    color: hsl(0 0% 100%);
     font-family: 'Press Start 2P', monospace;
     font-size: 10px;
-    color: hsl(var(--foreground));
-    text-shadow: 0 0 6px hsl(var(--panel-edge) / 0.8);
+    text-shadow: 1px 1px 0 hsl(var(--panel-edge-soft));
   }
   .pixel-panel-pink .pixel-panel-header {
     background: linear-gradient(180deg,
-      hsl(var(--hot-pink) / 0.35),
-      hsl(var(--hot-pink) / 0.1));
-    border-bottom-color: hsl(var(--hot-pink));
-    text-shadow: 0 0 6px hsl(var(--hot-pink) / 0.8);
+      hsl(330 95% 72%),
+      hsl(330 90% 50%));
   }
 
+  /* Win2k-style bevel button, candy pink */
   .pixel-btn {
     @apply inline-flex items-center justify-center gap-2 px-4 py-2 select-none cursor-pointer;
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-    border: 2px solid hsl(var(--foreground));
-    box-shadow: 3px 3px 0 0 hsl(var(--panel-edge-soft)),
-                0 0 18px hsl(var(--primary) / 0.5);
+    background: linear-gradient(180deg, hsl(330 90% 75%), hsl(330 85% 60%));
+    color: hsl(0 0% 100%);
+    border-top: 2px solid hsl(var(--bevel-light));
+    border-left: 2px solid hsl(var(--bevel-light));
+    border-right: 2px solid hsl(var(--bevel-dark));
+    border-bottom: 2px solid hsl(var(--bevel-dark));
+    box-shadow: 2px 2px 0 0 hsl(var(--bevel-dark) / 0.5);
+    text-shadow: 1px 1px 0 hsl(var(--panel-edge-soft));
     font-family: 'Press Start 2P', monospace;
     font-size: 10px;
-    transition: transform 80ms ease, box-shadow 80ms ease;
+    transition: transform 80ms ease, box-shadow 80ms ease, filter 80ms ease;
   }
   .pixel-btn:hover {
+    filter: brightness(1.05) saturate(1.1);
     transform: translate(-1px, -1px);
-    box-shadow: 4px 4px 0 0 hsl(var(--panel-edge-soft)),
-                0 0 24px hsl(var(--primary) / 0.7);
+    box-shadow: 3px 3px 0 0 hsl(var(--bevel-dark) / 0.5);
   }
   .pixel-btn:active {
     transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 0 hsl(var(--panel-edge-soft));
+    border-top-color: hsl(var(--bevel-dark));
+    border-left-color: hsl(var(--bevel-dark));
+    border-right-color: hsl(var(--bevel-light));
+    border-bottom-color: hsl(var(--bevel-light));
+    box-shadow: none;
   }
 
   .pixel-btn-spotify {
-    background: hsl(140 75% 40%);
+    background: linear-gradient(180deg, hsl(140 70% 55%), hsl(140 75% 38%));
     color: hsl(0 0% 100%);
-    border-color: hsl(140 75% 25%);
-    box-shadow: 3px 3px 0 0 hsl(140 75% 20%);
+    border-right-color: hsl(140 75% 22%);
+    border-bottom-color: hsl(140 75% 22%);
   }
 
-  .digital-text {
-    font-family: 'VT323', monospace;
-  }
-  .pixel-text {
-    font-family: 'Press Start 2P', monospace;
-  }
-  .silk-text {
-    font-family: 'Silkscreen', monospace;
-  }
+  .digital-text { font-family: 'VT323', monospace; }
+  .pixel-text { font-family: 'Press Start 2P', monospace; }
+  .silk-text { font-family: 'Silkscreen', monospace; }
 
   .menu-link {
-    color: hsl(var(--primary));
+    color: hsl(330 80% 35%);
     text-decoration: underline;
     text-underline-offset: 2px;
     font-family: 'VT323', monospace;
     font-size: 18px;
   }
   .menu-link:hover {
-    color: hsl(var(--accent));
-    text-shadow: 0 0 8px hsl(var(--accent) / 0.6);
+    color: hsl(var(--hot-pink));
+    text-shadow: 0 0 6px hsl(var(--hot-pink) / 0.6);
   }
 
-  /* nebula starfield overlay */
+  /* Cloud sky overlay — pixelated pastel cumulus */
   .starfield::before {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
+    image-rendering: pixelated;
+    background-color: transparent;
+    /* dithered pastel sky gradient + scattered pink pixel clouds */
     background-image:
-      radial-gradient(2px 2px at 12% 18%, hsl(0 0% 100% / 0.9), transparent 60%),
-      radial-gradient(1px 1px at 28% 42%, hsl(0 0% 100% / 0.7), transparent 60%),
-      radial-gradient(2px 2px at 64% 22%, hsl(50 100% 80% / 0.9), transparent 60%),
-      radial-gradient(1px 1px at 82% 60%, hsl(0 0% 100% / 0.8), transparent 60%),
-      radial-gradient(2px 2px at 48% 78%, hsl(320 100% 80% / 0.7), transparent 60%),
-      radial-gradient(1px 1px at 92% 14%, hsl(0 0% 100% / 0.7), transparent 60%),
-      radial-gradient(1px 1px at 6% 86%, hsl(180 100% 80% / 0.7), transparent 60%);
+      /* clouds (radial blobs in pink) */
+      radial-gradient(60px 28px at 14% 22%, hsl(330 90% 88%) 60%, transparent 62%),
+      radial-gradient(80px 32px at 72% 14%, hsl(330 90% 90%) 60%, transparent 62%),
+      radial-gradient(70px 30px at 38% 68%, hsl(330 90% 88%) 60%, transparent 62%),
+      radial-gradient(90px 36px at 88% 76%, hsl(330 90% 90%) 60%, transparent 62%),
+      radial-gradient(55px 24px at 8% 86%, hsl(330 90% 88%) 60%, transparent 62%),
+      /* dither dots */
+      radial-gradient(1px 1px at 20% 30%, hsl(0 0% 100% / 0.6), transparent 60%),
+      radial-gradient(1px 1px at 60% 50%, hsl(0 0% 100% / 0.5), transparent 60%),
+      radial-gradient(1px 1px at 80% 20%, hsl(0 0% 100% / 0.6), transparent 60%);
     z-index: 0;
+    opacity: 0.55;
   }
 
+  /* CRT scanlines, gentler over pink */
   .scanlines::after {
     content: '';
     position: absolute;
@@ -198,11 +225,11 @@
     pointer-events: none;
     background: repeating-linear-gradient(
       to bottom,
-      hsl(0 0% 0% / 0) 0px,
-      hsl(0 0% 0% / 0) 2px,
-      hsl(0 0% 0% / 0.18) 3px
+      hsl(0 0% 100% / 0) 0px,
+      hsl(0 0% 100% / 0) 2px,
+      hsl(330 60% 30% / 0.08) 3px
     );
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
   }
 
   .rainbow-text {
@@ -217,18 +244,10 @@
     color: transparent;
   }
 
-  .float-slow {
-    animation: float-slow 6s ease-in-out infinite;
-  }
-  .float-med {
-    animation: float-med 4.5s ease-in-out infinite;
-  }
-  .twinkle {
-    animation: twinkle 2.4s steps(2, end) infinite;
-  }
-  .glitch-pulse {
-    animation: glitch-pulse 3s ease-in-out infinite;
-  }
+  .float-slow { animation: float-slow 6s ease-in-out infinite; }
+  .float-med { animation: float-med 4.5s ease-in-out infinite; }
+  .twinkle { animation: twinkle 2.4s steps(2, end) infinite; }
+  .glitch-pulse { animation: glitch-pulse 3s ease-in-out infinite; }
 }
 
 @keyframes float-slow {
@@ -244,302 +263,6 @@
   50% { opacity: 0.55; filter: brightness(0.8); }
 }
 @keyframes glitch-pulse {
-  0%, 100% { filter: hue-rotate(0deg) drop-shadow(0 0 18px hsl(var(--primary) / 0.6)); }
-  50% { filter: hue-rotate(40deg) drop-shadow(0 0 28px hsl(var(--hot-pink) / 0.6)); }
-}
-
-/* ============================================================
-   Y2K KAWAII WORD 2000 — pink bevel UI
-   All colors HSL.
-   ============================================================ */
-@layer components {
-  .pixelated { image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
-
-  /* desktop screen behind the window */
-  .wd-screen {
-    background:
-      repeating-linear-gradient(45deg,
-        hsl(330 70% 88%) 0 8px, hsl(330 80% 92%) 8px 16px);
-    font-family: 'VT323', 'MS Sans Serif', monospace;
-    color: hsl(330 60% 18%);
-  }
-
-  .wd-window {
-    background: hsl(340 70% 90%);
-    border-top: 2px solid hsl(0 0% 100%);
-    border-left: 2px solid hsl(0 0% 100%);
-    border-right: 2px solid hsl(330 50% 35%);
-    border-bottom: 2px solid hsl(330 50% 35%);
-    box-shadow:
-      3px 3px 0 0 hsl(330 60% 25% / 0.4),
-      0 0 0 1px hsl(330 60% 25%);
-    padding: 2px;
-  }
-
-  /* Title bar */
-  .wd-titlebar {
-    display: flex; align-items: center; justify-content: space-between;
-    background: linear-gradient(180deg, hsl(330 90% 70%), hsl(330 85% 55%));
-    color: hsl(0 0% 100%);
-    padding: 4px 6px;
-    font-family: 'Press Start 2P', 'MS Sans Serif', monospace;
-    font-size: 11px;
-    text-shadow: 1px 1px 0 hsl(330 70% 30%);
-    border-bottom: 1px solid hsl(330 70% 35%);
-  }
-  .wd-title-icon { font-size: 14px; }
-  .wd-title-text { font-size: 11px; }
-
-  /* Menu bar */
-  .wd-menubar {
-    display: flex; align-items: center; gap: 2px;
-    background: hsl(340 75% 92%);
-    border-top: 1px solid hsl(0 0% 100%);
-    border-bottom: 1px solid hsl(330 40% 60%);
-    padding: 2px 4px;
-    font-family: 'VT323', 'MS Sans Serif', monospace;
-    font-size: 16px;
-  }
-  .wd-menu-item {
-    padding: 2px 8px;
-    color: hsl(330 50% 22%);
-    cursor: pointer;
-    line-height: 1;
-  }
-  .wd-menu-item:hover {
-    background: hsl(330 85% 60%);
-    color: hsl(0 0% 100%);
-  }
-  .wd-help-box {
-    border: 1px solid hsl(330 50% 35%);
-    background: hsl(0 0% 100%);
-    padding: 0 4px;
-    font-size: 12px;
-    color: hsl(330 60% 30%);
-  }
-
-  /* Toolbars */
-  .wd-toolbar {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 2px;
-    background: hsl(340 70% 90%);
-    border-top: 1px solid hsl(0 0% 100%);
-    border-bottom: 1px solid hsl(330 40% 60%);
-    padding: 3px 6px;
-  }
-  .wd-tool-btn {
-    width: 22px; height: 22px;
-    display: inline-flex; align-items: center; justify-content: center;
-    background: hsl(340 70% 90%);
-    color: hsl(330 60% 25%);
-    border-top: 1px solid hsl(340 70% 90%);
-    border-left: 1px solid hsl(340 70% 90%);
-    border-right: 1px solid hsl(340 70% 90%);
-    border-bottom: 1px solid hsl(340 70% 90%);
-    cursor: pointer;
-    font-family: 'Times New Roman', serif;
-    font-size: 14px;
-  }
-  .wd-tool-btn:hover {
-    background: hsl(330 90% 80%);
-    border-top-color: hsl(0 0% 100%);
-    border-left-color: hsl(0 0% 100%);
-    border-right-color: hsl(330 50% 40%);
-    border-bottom-color: hsl(330 50% 40%);
-  }
-  .wd-tool-btn:active {
-    border-top-color: hsl(330 50% 40%);
-    border-left-color: hsl(330 50% 40%);
-    border-right-color: hsl(0 0% 100%);
-    border-bottom-color: hsl(0 0% 100%);
-  }
-  .wd-sep {
-    width: 2px; height: 18px; margin: 0 4px;
-    border-left: 1px solid hsl(330 40% 55%);
-    border-right: 1px solid hsl(0 0% 100%);
-  }
-
-  .wd-select, .wd-zoom, .wd-color {
-    display: inline-flex; align-items: center; gap: 4px;
-    background: hsl(0 0% 100%);
-    color: hsl(330 60% 22%);
-    padding: 2px 6px;
-    border-top: 1px solid hsl(330 50% 40%);
-    border-left: 1px solid hsl(330 50% 40%);
-    border-right: 1px solid hsl(0 0% 100%);
-    border-bottom: 1px solid hsl(0 0% 100%);
-    font-size: 14px;
-    line-height: 1;
-    height: 20px;
-  }
-  .wd-select-style { min-width: 130px; }
-  .wd-select-font { min-width: 140px; font-family: 'Times New Roman', serif; font-style: italic; }
-  .wd-select-size { min-width: 42px; }
-  .wd-color-swatch {
-    display: inline-block; width: 14px; height: 10px;
-    border: 1px solid hsl(330 50% 30%);
-  }
-
-  /* Ruler */
-  .wd-ruler-row { display: flex; align-items: stretch; }
-  .wd-corner {
-    width: 26px; min-height: 22px;
-    background: hsl(340 70% 90%);
-    border-top: 1px solid hsl(0 0% 100%);
-    border-bottom: 1px solid hsl(330 40% 55%);
-    border-right: 1px solid hsl(330 40% 55%);
-  }
-  .wd-ruler-h {
-    flex: 1; display: flex;
-    background: linear-gradient(180deg, hsl(340 75% 92%), hsl(335 65% 82%));
-    border-top: 1px solid hsl(0 0% 100%);
-    border-bottom: 1px solid hsl(330 40% 55%);
-    height: 22px;
-    position: relative;
-  }
-  .wd-tick {
-    flex: 1; border-right: 1px solid hsl(330 50% 50%);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-  }
-  .wd-tick-num {
-    font-size: 11px; color: hsl(330 60% 28%);
-    font-family: 'VT323', monospace;
-  }
-
-  .wd-body-row { display: flex; align-items: stretch; min-height: 460px; }
-  .wd-ruler-v {
-    width: 26px;
-    background: linear-gradient(90deg, hsl(340 75% 92%), hsl(335 65% 82%));
-    border-right: 1px solid hsl(330 40% 55%);
-    display: flex; flex-direction: column;
-  }
-  .wd-tick-v {
-    flex: 1;
-    border-bottom: 1px solid hsl(330 50% 50%);
-    text-align: center;
-    font-size: 11px;
-    color: hsl(330 60% 28%);
-    padding-top: 2px;
-  }
-
-  /* Document area */
-  .wd-doc-wrap {
-    flex: 1;
-    background: hsl(335 60% 80%);
-    padding: 12px;
-    border-top: 1px solid hsl(330 40% 55%);
-    overflow: hidden;
-  }
-  .wd-doc {
-    min-height: 480px;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    border: 1px solid hsl(330 50% 30%);
-    box-shadow: 2px 2px 0 hsl(330 50% 35%);
-    padding: 28px 36px;
-  }
-  .wd-doc-inner {
-    background: hsl(0 0% 100% / 0.0);
-    color: hsl(330 70% 18%);
-    font-family: 'Times New Roman', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.5;
-    text-shadow: 1px 1px 0 hsl(0 0% 100% / 0.7);
-  }
-  .wd-doc-h1 {
-    font-family: 'Times New Roman', Georgia, serif;
-    font-size: 32px;
-    color: hsl(330 90% 35%);
-    margin: 0 0 12px;
-    text-align: center;
-    text-shadow: 2px 2px 0 hsl(0 0% 100%);
-  }
-  .wd-doc-p { margin: 0 0 12px; }
-  .wd-blink { animation: wd-blink 1s steps(2, end) infinite; color: hsl(330 80% 25%); }
-  @keyframes wd-blink { 50% { opacity: 0; } }
-
-  /* Scrollbars */
-  .wd-scroll-v {
-    width: 18px;
-    display: flex; flex-direction: column;
-    background: hsl(335 60% 85%);
-    border-left: 1px solid hsl(330 40% 55%);
-    border-top: 1px solid hsl(330 40% 55%);
-  }
-  .wd-scroll-btn, .wd-scroll-btn-h {
-    height: 18px; width: 18px;
-    display: flex; align-items: center; justify-content: center;
-    background: hsl(340 70% 90%);
-    border-top: 1px solid hsl(0 0% 100%);
-    border-left: 1px solid hsl(0 0% 100%);
-    border-right: 1px solid hsl(330 50% 40%);
-    border-bottom: 1px solid hsl(330 50% 40%);
-    font-size: 9px; color: hsl(330 60% 25%);
-    cursor: pointer; user-select: none;
-  }
-  .wd-scroll-track {
-    flex: 1; background: hsl(335 60% 85%);
-    position: relative;
-  }
-  .wd-scroll-thumb {
-    position: absolute; top: 18px; left: 1px; right: 1px; height: 90px;
-    background: hsl(340 70% 90%);
-    border-top: 1px solid hsl(0 0% 100%);
-    border-left: 1px solid hsl(0 0% 100%);
-    border-right: 1px solid hsl(330 50% 40%);
-    border-bottom: 1px solid hsl(330 50% 40%);
-  }
-  .wd-scroll-h {
-    height: 18px; display: flex;
-    background: hsl(335 60% 85%);
-    border-top: 1px solid hsl(330 40% 55%);
-  }
-  .wd-scroll-track-h {
-    flex: 1; position: relative; background: hsl(335 60% 85%);
-  }
-  .wd-scroll-thumb-h {
-    position: absolute; left: 18px; top: 1px; bottom: 1px; width: 140px;
-    background: hsl(340 70% 90%);
-    border-top: 1px solid hsl(0 0% 100%);
-    border-left: 1px solid hsl(0 0% 100%);
-    border-right: 1px solid hsl(330 50% 40%);
-    border-bottom: 1px solid hsl(330 50% 40%);
-  }
-
-  /* Status bar */
-  .wd-statusbar {
-    display: flex; align-items: stretch;
-    background: hsl(340 70% 90%);
-    border-top: 1px solid hsl(0 0% 100%);
-    font-family: 'VT323', 'MS Sans Serif', monospace;
-    font-size: 14px;
-    color: hsl(330 60% 22%);
-  }
-  .wd-status-cell {
-    padding: 2px 8px;
-    border-right: 1px solid hsl(330 40% 55%);
-    border-left: 1px solid hsl(0 0% 100%);
-    display: flex; align-items: center; justify-content: center;
-    min-width: 48px;
-    line-height: 1;
-  }
-  .wd-status-flag { color: hsl(330 30% 55%); min-width: 36px; }
-  .wd-status-resize {
-    width: 18px; display: flex; align-items: center; justify-content: center;
-    color: hsl(330 50% 40%); font-size: 10px;
-    background: hsl(340 70% 90%);
-  }
-
-  .wd-back-link {
-    background: hsl(330 90% 60%);
-    color: hsl(0 0% 100%);
-    padding: 4px 10px;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 9px;
-    border: 2px solid hsl(0 0% 100%);
-    box-shadow: 2px 2px 0 hsl(330 60% 30%);
-    text-decoration: none;
-  }
-  .wd-back-link:hover { background: hsl(330 90% 50%); }
+  0%, 100% { filter: hue-rotate(0deg) drop-shadow(0 0 14px hsl(var(--hot-pink) / 0.6)); }
+  50% { filter: hue-rotate(-20deg) drop-shadow(0 0 22px hsl(330 95% 75% / 0.8)); }
 }
