@@ -28,8 +28,15 @@ export const PixelPanel = ({
     >
       {title && (
         <header className="pixel-panel-header">
-          <span className="uppercase tracking-wider">{title}</span>
-          {rightSlot && <span className="text-[8px] opacity-90">{rightSlot}</span>}
+          <span className="uppercase tracking-wider truncate">{title}</span>
+          <span className="flex items-center gap-2">
+            {rightSlot && <span className="text-[8px] opacity-90">{rightSlot}</span>}
+            <span className="pixel-header-hearts" aria-hidden>
+              <span>♥</span>
+              <span>♥</span>
+              <span>♥</span>
+            </span>
+          </span>
         </header>
       )}
       <div className={cn("p-3 relative", bodyClassName)}>{children}</div>
