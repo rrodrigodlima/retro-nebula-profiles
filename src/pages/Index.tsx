@@ -260,120 +260,111 @@ const Index = () => {
               <ProfileSong />
             </PixelPanel>
 
-            {/* Videos + Shorts row */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-              {/* Regular videos (wider) */}
-              <div className="lg:col-span-8">
-                <PixelPanel
-                  title={<span>cind's Videos</span>}
-                  rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
-                >
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {[
-                      { title: "amor fati.", channel: "Tinocando TV", hue: 320 },
-                      { title: "GUERRA DA COREIA - A HISTÓRIA", channel: "Canal Nostalgia", hue: 200 },
-                      { title: "VINIZX: TIMIDEZ, BULLYING E SUP", channel: "LOUD", hue: 280 },
-                      { title: "lo-fi beats to cry to", channel: "starboy_99", hue: 250 },
-                      { title: "ANIMES QUE MARCARAM ÉPOCA", channel: "Canal Nostalgia", hue: 20 },
-                      { title: "CSS tricks you didn't know", channel: "devtuber", hue: 160 },
-                      { title: "vlog: galaxy walk 🌌", channel: "milkii", hue: 300 },
-                      { title: "y2k aesthetic compilation", channel: "antenna.exe", hue: 340 },
-                      { title: "speedrun: world record", channel: "lemi", hue: 100 },
-                    ].map((v) => (
-                      <div key={v.title} className="border-2 border-panel-edge/60 bg-space-deep/60 overflow-hidden">
-                        <div
-                          className="relative aspect-video flex items-center justify-center"
-                          style={{
-                            background: `linear-gradient(135deg, hsl(${v.hue} 70% 35%), hsl(${v.hue + 30} 60% 18%))`,
-                          }}
-                        >
-                          {/* play button */}
-                          <div
-                            className="w-10 h-7 flex items-center justify-center rounded-sm"
-                            style={{ background: "hsl(0 90% 50%)", boxShadow: "0 0 12px hsl(0 90% 50% / 0.6)" }}
-                          >
-                            <span className="text-white text-sm leading-none">▶</span>
-                          </div>
-                          {/* title overlay */}
-                          <div className="absolute top-1 left-1 right-1">
-                            <p className="pixel-text text-[8px] text-white leading-tight line-clamp-2"
-                               style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
-                              {v.title}
-                            </p>
-                            <p className="digital-text text-xs text-white/80"
-                               style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
-                              {v.channel}
-                            </p>
-                          </div>
-                          {/* youtube watermark */}
-                          <div className="absolute bottom-1 right-1 digital-text text-[10px] text-white/70">
-                            ▶ YouTube
-                          </div>
-                        </div>
-                        <div className="px-2 py-1 flex items-center gap-1">
-                          <span className="pixel-text text-[8px] text-hot-pink">VÍDEO</span>
-                          <span className="digital-text text-xs text-muted-foreground truncate">• {v.channel}</span>
-                        </div>
+            {/* Videos (horizontal) */}
+            <PixelPanel
+              title={<span>cind's Videos</span>}
+              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {[
+                  { title: "amor fati.", channel: "Tinocando TV", hue: 320 },
+                  { title: "GUERRA DA COREIA - A HISTÓRIA", channel: "Canal Nostalgia", hue: 200 },
+                  { title: "VINIZX: TIMIDEZ, BULLYING E SUP", channel: "LOUD", hue: 280 },
+                  { title: "lo-fi beats to cry to", channel: "starboy_99", hue: 250 },
+                  { title: "ANIMES QUE MARCARAM ÉPOCA", channel: "Canal Nostalgia", hue: 20 },
+                  { title: "CSS tricks you didn't know", channel: "devtuber", hue: 160 },
+                  { title: "vlog: galaxy walk 🌌", channel: "milkii", hue: 300 },
+                  { title: "y2k aesthetic compilation", channel: "antenna.exe", hue: 340 },
+                  { title: "speedrun: world record", channel: "lemi", hue: 100 },
+                ].map((v) => (
+                  <div key={v.title} className="border-2 border-panel-edge/60 bg-space-deep/60 overflow-hidden">
+                    <div
+                      className="relative aspect-video flex items-center justify-center"
+                      style={{
+                        background: `linear-gradient(135deg, hsl(${v.hue} 70% 35%), hsl(${v.hue + 30} 60% 18%))`,
+                      }}
+                    >
+                      <div
+                        className="w-10 h-7 flex items-center justify-center rounded-sm"
+                        style={{ background: "hsl(0 90% 50%)", boxShadow: "0 0 12px hsl(0 90% 50% / 0.6)" }}
+                      >
+                        <span className="text-white text-sm leading-none">▶</span>
                       </div>
-                    ))}
+                      <div className="absolute top-1 left-1 right-1">
+                        <p className="pixel-text text-[8px] text-white leading-tight line-clamp-2"
+                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
+                          {v.title}
+                        </p>
+                        <p className="digital-text text-xs text-white/80"
+                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
+                          {v.channel}
+                        </p>
+                      </div>
+                      <div className="absolute bottom-1 right-1 digital-text text-[10px] text-white/70">
+                        ▶ YouTube
+                      </div>
+                    </div>
+                    <div className="px-2 py-1 flex items-center gap-1">
+                      <span className="pixel-text text-[8px] text-hot-pink">VÍDEO</span>
+                      <span className="digital-text text-xs text-muted-foreground truncate">• {v.channel}</span>
+                    </div>
                   </div>
-                </PixelPanel>
+                ))}
               </div>
+            </PixelPanel>
 
-              {/* Shorts panel (narrower) */}
-              <div className="lg:col-span-4">
-                <PixelPanel
-                  title={<span>cind's Shorts</span>}
-                  variant="pink"
-                  rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
-                >
-                  <div className="grid grid-cols-2 gap-2">
-                    {[
-                      { title: "oq ACONTECERIA em U", channel: "Tinocando TV", hue: 220 },
-                      { title: "Você é FELIZ?", channel: "Canal Nostalgia", hue: 30 },
-                      { title: "A ENORME DESTRUIÇÃ", channel: "Canal Nostalgia", hue: 45 },
-                      { title: "Goku ensina Mario a vo", channel: "Canal Nostalgia", hue: 130 },
-                    ].map((s) => (
-                      <div key={s.title} className="border-2 border-panel-edge/60 bg-space-deep/60 overflow-hidden">
-                        <div
-                          className="relative flex items-center justify-center"
-                          style={{
-                            aspectRatio: "9 / 16",
-                            background: `linear-gradient(160deg, hsl(${s.hue} 70% 30%), hsl(${s.hue + 40} 55% 14%))`,
-                          }}
-                        >
-                          {/* SHORT badge */}
-                          <span
-                            className="absolute top-1 right-1 pixel-text text-[7px] px-1 py-[1px] border border-hot-pink/80 text-hot-pink bg-space-deep/70"
-                            style={{ textShadow: "0 0 6px hsl(var(--hot-pink)/0.9)" }}
-                          >
-                            SHORT
-                          </span>
-                          {/* play button (rounded — shorts style) */}
-                          <div
-                            className="w-9 h-9 flex items-center justify-center rounded-full"
-                            style={{ background: "hsl(0 90% 50%)", boxShadow: "0 0 14px hsl(0 90% 50% / 0.7)" }}
-                          >
-                            <span className="text-white text-base leading-none">▶</span>
-                          </div>
-                          {/* title overlay */}
-                          <div className="absolute top-1 left-1 right-12">
-                            <p className="pixel-text text-[7px] text-white leading-tight line-clamp-2"
-                               style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.85)" }}>
-                              {s.title}
-                            </p>
-                            <p className="digital-text text-[10px] text-white/80"
-                               style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.85)" }}>
-                              {s.channel}
-                            </p>
-                          </div>
-                        </div>
+            {/* Shorts panel — 2 rows of 4 */}
+            <PixelPanel
+              title={<span>cind's Shorts</span>}
+              variant="pink"
+              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { title: "oq ACONTECERIA em U", channel: "Tinocando TV", hue: 220 },
+                  { title: "Você é FELIZ?", channel: "Canal Nostalgia", hue: 30 },
+                  { title: "A ENORME DESTRUIÇÃ", channel: "Canal Nostalgia", hue: 45 },
+                  { title: "Goku ensina Mario a vo", channel: "Canal Nostalgia", hue: 130 },
+                  { title: "TOP 10 GAMES dos anos 2000", channel: "Canal Nostalgia", hue: 280 },
+                  { title: "se espalhariam", channel: "Tinocando TV", hue: 340 },
+                  { title: "10x mais FORTE que o SOL", channel: "Canal Nostalgia", hue: 50 },
+                  { title: "Mario VS Goku FINAL", channel: "Canal Nostalgia", hue: 150 },
+                ].map((s) => (
+                  <div key={s.title} className="border-2 border-panel-edge/60 bg-space-deep/60 overflow-hidden">
+                    <div
+                      className="relative flex items-center justify-center"
+                      style={{
+                        aspectRatio: "9 / 16",
+                        background: `linear-gradient(160deg, hsl(${s.hue} 70% 30%), hsl(${s.hue + 40} 55% 14%))`,
+                      }}
+                    >
+                      <span
+                        className="absolute top-1 right-1 pixel-text text-[7px] px-1 py-[1px] border border-hot-pink/80 text-hot-pink bg-space-deep/70"
+                        style={{ textShadow: "0 0 6px hsl(var(--hot-pink)/0.9)" }}
+                      >
+                        SHORT
+                      </span>
+                      <div
+                        className="w-9 h-9 flex items-center justify-center rounded-full"
+                        style={{ background: "hsl(0 90% 50%)", boxShadow: "0 0 14px hsl(0 90% 50% / 0.7)" }}
+                      >
+                        <span className="text-white text-base leading-none">▶</span>
                       </div>
-                    ))}
+                      <div className="absolute top-1 left-1 right-12">
+                        <p className="pixel-text text-[7px] text-white leading-tight line-clamp-2"
+                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.85)" }}>
+                          {s.title}
+                        </p>
+                        <p className="digital-text text-[10px] text-white/80"
+                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.85)" }}>
+                          {s.channel}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </PixelPanel>
+                ))}
               </div>
-            </div>
+            </PixelPanel>
           </div>
         </div>
 
