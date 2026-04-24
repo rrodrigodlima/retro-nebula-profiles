@@ -161,28 +161,18 @@
       hsl(330 95% 45%));
   }
 
-  /* tiny window-control hearts in panel header */
+  /* tiny window-control hearts in panel header — plain white, no chrome */
   .pixel-header-hearts {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     flex-shrink: 0;
   }
   .pixel-header-hearts span {
-    width: 12px;
-    height: 12px;
-    display: inline-block;
-    background: hsl(0 0% 100%);
-    color: hsl(330 95% 50%);
-    font-size: 10px;
-    line-height: 12px;
-    text-align: center;
-    border-top: 1px solid hsl(0 0% 100%);
-    border-left: 1px solid hsl(0 0% 100%);
-    border-right: 1px solid hsl(var(--bevel-dark));
-    border-bottom: 1px solid hsl(var(--bevel-dark));
-    border-radius: 3px;
-    text-shadow: none;
+    color: hsl(0 0% 100%);
+    font-size: 12px;
+    line-height: 1;
+    text-shadow: 0 0 4px hsl(0 0% 100% / 0.5);
     font-family: 'VT323', monospace;
   }
 
