@@ -89,7 +89,7 @@ const Index = () => {
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 py-8">
         <div className="grid grid-cols-12 gap-4">
           {/* ===== LEFT COLUMN (profile + photos + top8 + badges + visitors stacked) ===== */}
-          <div className="col-span-12 md:col-span-5 lg:col-span-4 space-y-4">
+          <div className="col-span-12 md:col-span-4 lg:col-span-3 space-y-3 [&_.pixel-panel]:text-sm">
             {/* Profile panel */}
             <PixelPanel title="cind" variant="pink">
               <div className="flex flex-col items-center gap-3">
