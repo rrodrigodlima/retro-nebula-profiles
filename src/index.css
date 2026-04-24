@@ -92,14 +92,8 @@
     font-family: 'VT323', 'MS Sans Serif', monospace;
     font-size: 18px;
     letter-spacing: 0.02em;
-    /* dark cosmic backdrop with subtle pink dither */
-    background-color: hsl(240 10% 6%);
-    background-image:
-      radial-gradient(ellipse at 20% 10%, hsl(330 80% 30% / 0.35), transparent 55%),
-      radial-gradient(ellipse at 85% 80%, hsl(280 70% 30% / 0.3), transparent 55%),
-      repeating-linear-gradient(45deg,
-        hsl(240 12% 7%) 0 6px,
-        hsl(240 10% 9%) 6px 12px);
+    /* original pastel sky backdrop */
+    background-color: hsl(330 85% 78%);
   }
 
   h1, h2, h3, h4, h5, h6 {
