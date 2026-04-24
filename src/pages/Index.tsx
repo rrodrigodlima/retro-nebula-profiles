@@ -259,6 +259,56 @@ const Index = () => {
             >
               <ProfileSong />
             </PixelPanel>
+
+            {/* Videos row */}
+            <PixelPanel
+              title={<span>cind's Videos</span>}
+              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { title: "amor fati.", channel: "Tinocando TV", hue: 320 },
+                  { title: "GUERRA DA COREIA - A HISTÓRIA", channel: "Canal Nostalgia", hue: 200 },
+                  { title: "VINIZX: TIMIDEZ, BULLYING E SUP", channel: "LOUD", hue: 280 },
+                ].map((v) => (
+                  <div key={v.title} className="border-2 border-panel-edge/60 bg-space-deep/60 overflow-hidden">
+                    <div
+                      className="relative aspect-video flex items-center justify-center"
+                      style={{
+                        background: `linear-gradient(135deg, hsl(${v.hue} 70% 35%), hsl(${v.hue + 30} 60% 18%))`,
+                      }}
+                    >
+                      {/* play button */}
+                      <div
+                        className="w-12 h-8 flex items-center justify-center rounded-sm"
+                        style={{ background: "hsl(0 90% 50%)", boxShadow: "0 0 12px hsl(0 90% 50% / 0.6)" }}
+                      >
+                        <span className="text-white text-base leading-none">▶</span>
+                      </div>
+                      {/* title overlay */}
+                      <div className="absolute top-1 left-1 right-1">
+                        <p className="pixel-text text-[8px] text-white leading-tight line-clamp-2"
+                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
+                          {v.title}
+                        </p>
+                        <p className="digital-text text-xs text-white/80"
+                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
+                          {v.channel}
+                        </p>
+                      </div>
+                      {/* youtube watermark */}
+                      <div className="absolute bottom-1 right-1 digital-text text-[10px] text-white/70">
+                        ▶ YouTube
+                      </div>
+                    </div>
+                    <div className="px-2 py-1 flex items-center gap-1">
+                      <span className="pixel-text text-[8px] text-hot-pink">VÍDEO</span>
+                      <span className="digital-text text-xs text-muted-foreground">• {v.channel}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </PixelPanel>
           </div>
         </div>
 
