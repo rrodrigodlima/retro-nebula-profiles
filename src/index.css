@@ -108,29 +108,42 @@
 }
 
 @layer components {
-  /* pixel panel — graphite body, hot pink header, hot pink glow halo */
+  /* pixel panel — graphite body, hot pink header, hover-only glow */
   .pixel-panel {
-    @apply relative bg-card text-card-foreground;
+    @apply relative bg-card text-card-foreground overflow-hidden;
+    border-radius: 12px;
     border-top: 2px solid hsl(var(--bevel-light));
     border-left: 2px solid hsl(var(--bevel-light));
     border-right: 2px solid hsl(var(--bevel-dark));
     border-bottom: 2px solid hsl(var(--bevel-dark));
-    /* hot pink glow halo around the whole box */
+    /* contained resting shadow — no glow bleeding into siblings */
+    box-shadow:
+      0 0 0 1px hsl(var(--hot-pink) / 0.7),
+      2px 2px 0 0 hsl(var(--bevel-dark) / 0.45);
+    transition: transform 200ms ease, box-shadow 250ms ease;
+    will-change: transform;
+  }
+  .pixel-panel:hover {
+    transform: translateY(-3px);
     box-shadow:
       0 0 0 1px hsl(var(--hot-pink)),
-      0 0 18px 2px hsl(var(--hot-pink) / 0.55),
-      0 0 42px 6px hsl(var(--hot-pink) / 0.35),
-      3px 3px 0 0 hsl(var(--bevel-dark) / 0.5);
+      0 0 12px 1px hsl(var(--hot-pink) / 0.55),
+      4px 6px 0 0 hsl(var(--bevel-dark) / 0.5);
   }
   .pixel-panel-pink {
     box-shadow:
       0 0 0 1px hsl(var(--hot-pink)),
-      0 0 22px 3px hsl(var(--hot-pink) / 0.7),
-      0 0 56px 10px hsl(var(--hot-pink) / 0.45),
-      3px 3px 0 0 hsl(var(--bevel-dark) / 0.55);
+      2px 2px 0 0 hsl(var(--bevel-dark) / 0.5);
   }
+  .pixel-panel-pink:hover {
+    box-shadow:
+      0 0 0 1px hsl(var(--hot-pink)),
+      0 0 16px 2px hsl(var(--hot-pink) / 0.7),
+      4px 6px 0 0 hsl(var(--bevel-dark) / 0.55);
+  }
+
   .pixel-panel-header {
-    @apply px-3 py-2 flex items-center justify-between;
+    @apply px-3 py-2 flex items-center justify-between gap-2;
     background: linear-gradient(180deg,
       hsl(330 95% 65%),
       hsl(330 90% 48%));
@@ -144,6 +157,31 @@
     background: linear-gradient(180deg,
       hsl(330 100% 68%),
       hsl(330 95% 45%));
+  }
+
+  /* tiny window-control hearts in panel header */
+  .pixel-header-hearts {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .pixel-header-hearts span {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: hsl(0 0% 100%);
+    color: hsl(330 95% 50%);
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    border-top: 1px solid hsl(0 0% 100%);
+    border-left: 1px solid hsl(0 0% 100%);
+    border-right: 1px solid hsl(var(--bevel-dark));
+    border-bottom: 1px solid hsl(var(--bevel-dark));
+    border-radius: 3px;
+    text-shadow: none;
+    font-family: 'VT323', monospace;
   }
 
   /* Win2k-style bevel button, candy pink */
