@@ -199,7 +199,7 @@ const Index = () => {
           </div>
 
           {/* ===== CENTER COLUMN ===== */}
-          <div className="col-span-12 md:col-span-7 lg:col-span-8 space-y-4">
+          <div className="col-span-12 md:col-span-8 lg:col-span-9 space-y-4">
             {/* Lore & Blurbs combined */}
             <PixelPanel title={<span>cind's Lore <span className="opacity-60">/</span> cind's Blurbs</span>}>
               <div className="relative">
