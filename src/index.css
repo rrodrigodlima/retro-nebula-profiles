@@ -10,8 +10,8 @@
 
 @layer base {
   :root {
-    /* pastel pink sky palette */
-    --background: 335 75% 86%;
+    /* dark cosmic backdrop */
+    --background: 240 10% 6%;
     --foreground: 0 0% 96%;
 
     /* graphite interior for panels */
