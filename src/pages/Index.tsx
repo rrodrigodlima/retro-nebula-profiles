@@ -139,6 +139,63 @@ const Index = () => {
                 No photos yet
               </div>
             </PixelPanel>
+
+            {/* Top 8 */}
+            <PixelPanel
+              title="cind's Top 8"
+              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
+            >
+              <Top8Grid />
+            </PixelPanel>
+
+            {/* Badges showcase */}
+            <PixelPanel title="badges" variant="pink">
+              <div className="grid grid-cols-3 gap-2 text-center">
+                {[
+                  { icon: "★", label: "stargazer", token: "--gold" },
+                  { icon: "❤", label: "loved", token: "--hot-pink" },
+                  { icon: "✦", label: "online", token: "--primary" },
+                  { icon: "♪", label: "music", token: "--hot-pink" },
+                  { icon: "✿", label: "cute", token: "--hot-pink" },
+                  { icon: "✚", label: "healer", token: "--gold" },
+                ].map((b) => (
+                  <div
+                    key={b.label}
+                    className="border-2 border-panel-edge/70 p-2 bg-space-deep/60"
+                  >
+                    <div
+                      className="pixel-text text-base"
+                      style={{
+                        color: `hsl(var(${b.token}))`,
+                        textShadow: `0 0 8px hsl(var(${b.token})/0.8)`,
+                      }}
+                    >
+                      {b.icon}
+                    </div>
+                    <p className="digital-text text-xs text-muted-foreground mt-1">
+                      {b.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </PixelPanel>
+
+            {/* Visitors */}
+            <PixelPanel title="recent visitors">
+              <ul className="space-y-1 digital-text text-sm">
+                {[
+                  ["✦", "starboy_99", "1m ago"],
+                  ["✿", "milkii", "12m ago"],
+                  ["♥", "antenna.exe", "44m ago"],
+                  ["★", "lemi", "2h ago"],
+                ].map(([ic, name, time]) => (
+                  <li key={name as string} className="flex items-center justify-between border-b border-panel-edge/30 pb-1">
+                    <span><span className="text-hot-pink mr-1">{ic}</span><span className="text-primary">{name}</span></span>
+                    <span className="text-muted-foreground text-xs">{time}</span>
+                  </li>
+                ))}
+              </ul>
+            </PixelPanel>
           </div>
 
           {/* ===== CENTER COLUMN ===== */}
@@ -201,66 +258,6 @@ const Index = () => {
               rightSlot={<span className="text-hot-pink">▶ now playing</span>}
             >
               <ProfileSong />
-            </PixelPanel>
-          </div>
-
-          {/* ===== RIGHT COLUMN ===== */}
-          <div className="col-span-12 lg:col-span-3 space-y-4">
-            {/* Top 8 */}
-            <PixelPanel
-              title="cind's Top 8"
-              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
-            >
-              <Top8Grid />
-            </PixelPanel>
-
-            {/* Badges showcase */}
-            <PixelPanel title="badges" variant="pink">
-              <div className="grid grid-cols-3 gap-2 text-center">
-                {[
-                  { icon: "★", label: "stargazer", token: "--gold" },
-                  { icon: "❤", label: "loved", token: "--hot-pink" },
-                  { icon: "✦", label: "online", token: "--primary" },
-                  { icon: "♪", label: "music", token: "--hot-pink" },
-                  { icon: "✿", label: "cute", token: "--hot-pink" },
-                  { icon: "✚", label: "healer", token: "--gold" },
-                ].map((b) => (
-                  <div
-                    key={b.label}
-                    className="border-2 border-panel-edge/70 p-2 bg-space-deep/60"
-                  >
-                    <div
-                      className="pixel-text text-base"
-                      style={{
-                        color: `hsl(var(${b.token}))`,
-                        textShadow: `0 0 8px hsl(var(${b.token})/0.8)`,
-                      }}
-                    >
-                      {b.icon}
-                    </div>
-                    <p className="digital-text text-xs text-muted-foreground mt-1">
-                      {b.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </PixelPanel>
-
-            {/* Visitors */}
-            <PixelPanel title="recent visitors">
-              <ul className="space-y-1 digital-text text-sm">
-                {[
-                  ["✦", "starboy_99", "1m ago"],
-                  ["✿", "milkii", "12m ago"],
-                  ["♥", "antenna.exe", "44m ago"],
-                  ["★", "lemi", "2h ago"],
-                ].map(([ic, name, time]) => (
-                  <li key={name as string} className="flex items-center justify-between border-b border-panel-edge/30 pb-1">
-                    <span><span className="text-hot-pink mr-1">{ic}</span><span className="text-primary">{name}</span></span>
-                    <span className="text-muted-foreground text-xs">{time}</span>
-                  </li>
-                ))}
-              </ul>
             </PixelPanel>
           </div>
         </div>
