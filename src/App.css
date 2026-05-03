@@ -1,0 +1,99 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Efeito Parrot Button - Wirluro Studio */
+.btn-parrot-wirluro {
+  background: #121010;
+  color: #fff;
+  border: 3px solid #ff006e;
+  border-radius: 50px;
+  padding: 0.8rem 2.2rem;
+  font-family: "Margarine", sans-serif;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px rgba(255, 0, 110, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-parrot-wirluro:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 110, 0.5);
+  border-color: #fff;
+}
+
+.btn-parrot-wirluro:active { transform: scale(0.95); }
+.btn-parrot-wirluro:disabled { opacity: 0.8; cursor: not-allowed; }
+
+/* Posicionamento dos Papagaios */
+.parrot-container { position: relative; }
+
+.parrot-item {
+  position: absolute;
+  width: 70px;
+  text-align: center;
+  animation: parrot-blink 0.8s infinite;
+  color: transparent;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.parrot-item:before { content: "Wirluro?"; }
+.btn-parrot-wirluro:hover ~ .parrot-item:before { content: "DO IT!"; }
+
+.parrot-item:nth-child(1) { top: -35px; left: -45px; font-size: 12px; transform: rotate(-20deg); animation-duration: 0.5s; }
+.parrot-item:nth-child(2) { right: -45px; top: -25px; font-size: 12px; transform: rotate(15deg); animation-duration: 0.3s; }
+.parrot-item:nth-child(3) { top: -65px; left: 15px; font-size: 16px; transform: rotate(10deg); animation-duration: 1s; }
+.parrot-item:nth-child(4) { top: -75px; left: 95px; font-size: 18px; transform: rotate(2deg); animation-duration: 0.7s; }
+.parrot-item:nth-child(5) { bottom: -45px; left: 110px; font-size: 14px; transform: rotate(-20deg); animation-duration: 0.8s; }
+.parrot-item:nth-child(6) { bottom: -45px; left: -10px; font-size: 12px; transform: rotate(10deg); animation-duration: 1.2s; }
+
+@keyframes parrot-blink {
+  25%, 75% { color: transparent; }
+  40%, 60% { color: #ff006e; text-shadow: 0 0 8px #ff006e; }
+}

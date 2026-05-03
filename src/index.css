@@ -1,0 +1,427 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   cind — Y2K KAWAII pixel design system
+   Pink pastel skies, pixelated clouds, bevel borders.
+   All colors HSL.
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* dark cosmic backdrop */
+    --background: 240 10% 6%;
+    --foreground: 0 0% 96%;
+
+    /* graphite interior for panels */
+    --card: 240 6% 12%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 240 6% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    /* hot pink primary */
+    --primary: 330 90% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* soft lilac */
+    --secondary: 290 55% 80%;
+    --secondary-foreground: 330 70% 18%;
+
+    --muted: 240 5% 18%;
+    --muted-foreground: 330 25% 75%;
+
+    --accent: 195 70% 70%;
+    --accent-foreground: 330 70% 18%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 330 60% 55%;
+    --input: 0 0% 100%;
+    --ring: 330 90% 55%;
+
+    --radius: 0;
+
+    /* extended profile tokens — re-skinned for pink */
+    --space-deep: 335 65% 78%;
+    /* deep "sky" lilac */
+    --space-mid: 340 75% 88%;
+    --panel: 340 80% 94%;
+    --panel-edge: 330 80% 50%;
+    /* hot pink edge */
+    --panel-edge-soft: 330 60% 35%;
+    /* shadow pink */
+    --hot-pink: 330 95% 60%;
+    --rainbow-red: 0 90% 60%;
+    --rainbow-yellow: 50 95% 60%;
+    --rainbow-green: 140 70% 55%;
+    --rainbow-blue: 200 90% 65%;
+    --rainbow-purple: 280 75% 65%;
+    --gold: 45 95% 55%;
+
+    /* bevel shadows — Win2k chrome but pink */
+    --bevel-light: 0 0% 100%;
+    --bevel-dark: 330 60% 30%;
+
+    --shadow-glow: 2px 2px 0 0 hsl(var(--bevel-dark) / 0.5),
+      inset 1px 1px 0 0 hsl(var(--bevel-light));
+    --shadow-glow-pink: 3px 3px 0 0 hsl(var(--bevel-dark) / 0.55),
+      inset 1px 1px 0 0 hsl(var(--bevel-light)),
+      0 0 18px hsl(var(--hot-pink) / 0.4);
+
+    --sidebar-background: 340 80% 94%;
+    --sidebar-foreground: 330 70% 18%;
+    --sidebar-primary: 330 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 335 50% 88%;
+    --sidebar-accent-foreground: 330 70% 18%;
+    --sidebar-border: 330 60% 55%;
+    --sidebar-ring: 330 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  html,
+  body,
+  #root {
+    @apply text-foreground;
+    font-family: Georgia, serif !important;
+    font-weight: bold !important;
+
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    /* original pastel sky backdrop */
+    background-color: hsl(0, 0%, 0%);
+    /* cursor: url('https://myoshi-c.jinxxy-cdn.com/cdn-cgi/image/format=auto/https://cdn.cursors-4u.net/previews/chrome-pointer-4db561db-32.webp'), auto; */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Georgia, serif !important;
+    letter-spacing: 0;
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+
+  /* pixel panel — graphite body, hot pink header, hover-only glow */
+  .pixel-panel {
+    @apply relative bg-card text-card-foreground overflow-hidden;
+    border-radius: 12px;
+    border-top: 2px solid hsl(var(--bevel-light));
+    border-left: 2px solid hsl(var(--bevel-light));
+    border-right: 2px solid hsl(var(--bevel-dark));
+    border-bottom: 2px solid hsl(var(--bevel-dark));
+    /* contained resting shadow — no glow bleeding into siblings */
+    box-shadow:
+      0 0 0 1px hsl(var(--hot-pink) / 0.7),
+      2px 2px 0 0 hsl(var(--bevel-dark) / 0.45);
+    transition: transform 200ms ease, box-shadow 250ms ease;
+    will-change: transform;
+  }
+
+  .pixel-panel:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px hsl(var(--hot-pink)),
+      0 0 12px 1px hsl(var(--hot-pink) / 0.55);
+  }
+
+  .pixel-panel-pink {
+    box-shadow:
+      0 0 0 1px hsl(var(--hot-pink)),
+      2px 2px 0 0 hsl(var(--bevel-dark) / 0.5);
+  }
+
+  .pixel-panel-pink:hover {
+    box-shadow:
+      0 0 0 1px hsl(var(--hot-pink)),
+      0 0 16px 2px hsl(var(--hot-pink) / 0.7);
+  }
+
+  .pixel-panel-header {
+    @apply px-3 py-2 flex items-center justify-between gap-2;
+    background: linear-gradient(180deg,
+        hsl(330 95% 65%),
+        hsl(330 90% 48%));
+    border-bottom: 2px solid hsl(var(--panel-edge-soft));
+    color: hsl(0 0% 100%);
+    font-family: Georgia, serif !important;
+    font-size: 12px;
+    text-shadow: 1px 1px 0 hsl(var(--panel-edge-soft));
+  }
+
+  .pixel-panel-pink .pixel-panel-header {
+    background: linear-gradient(180deg,
+        hsl(330 100% 68%),
+        hsl(330 95% 45%));
+  }
+
+  /* tiny window-control hearts in panel header — plain white, no chrome */
+  .pixel-header-hearts {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+
+  .pixel-header-hearts span {
+    color: hsl(0 0% 100%);
+    font-size: 12px;
+    line-height: 1;
+    text-shadow: 0 0 4px hsl(0 0% 100% / 0.5);
+    font-family: Georgia, serif !important;
+  }
+
+  /* Win2k-style bevel button, candy pink */
+  .pixel-btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 select-none cursor-pointer;
+    background: linear-gradient(180deg, hsl(330 90% 75%), hsl(330 85% 60%));
+    color: hsl(0 0% 100%);
+    border-top: 2px solid hsl(var(--bevel-light));
+    border-left: 2px solid hsl(var(--bevel-light));
+    border-right: 2px solid hsl(var(--bevel-dark));
+    border-bottom: 2px solid hsl(var(--bevel-dark));
+    box-shadow: 2px 2px 0 0 hsl(var(--bevel-dark) / 0.5);
+    text-shadow: 1px 1px 0 hsl(var(--panel-edge-soft));
+    font-family: Georgia, serif !important;
+    font-size: 30px;
+    transition: transform 80ms ease, box-shadow 80ms ease, filter 80ms ease;
+  }
+
+  .pixel-btn:hover {
+    filter: brightness(1.05) saturate(1.1);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 0 hsl(var(--bevel-dark) / 0.5);
+  }
+
+  .pixel-btn:active {
+    transform: translate(2px, 2px);
+    border-top-color: hsl(var(--bevel-dark));
+    border-left-color: hsl(var(--bevel-dark));
+    border-right-color: hsl(var(--bevel-light));
+    border-bottom-color: hsl(var(--bevel-light));
+    box-shadow: none;
+  }
+
+  .pixel-btn-spotify {
+    background: linear-gradient(180deg, hsl(140 70% 55%), hsl(140 75% 38%));
+    color: hsl(0 0% 100%);
+    border-right-color: hsl(140 75% 22%);
+    border-bottom-color: hsl(140 75% 22%);
+  }
+
+  .digital-text {
+    font-family: Georgia, serif !important;
+  }
+
+  .pixel-text {
+    font-family: Georgia, serif !important;
+  }
+
+  .silk-text {
+    font-family: Georgia, serif !important;
+  }
+
+  .menu-link {
+    color: hsl(330 80% 35%);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-family: Georgia, serif !important;
+    font-size: 18px;
+  }
+
+  .menu-link:hover {
+    color: hsl(var(--hot-pink));
+    text-shadow: 0 0 6px hsl(var(--hot-pink) / 0.6);
+  }
+
+  /* Cloud sky overlay — pixelated pastel cumulus */
+
+
+  /* CRT scanlines, gentler over pink */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom,
+        hsl(0 0% 100% / 0) 0px,
+        hsl(0 0% 100% / 0) 2px,
+        hsl(330 60% 30% / 0.08) 3px);
+    mix-blend-mode: multiply;
+  }
+
+  .rainbow-text {
+    background: linear-gradient(90deg,
+        hsl(var(--rainbow-red)),
+        hsl(var(--rainbow-yellow)),
+        hsl(var(--rainbow-green)),
+        hsl(var(--rainbow-blue)),
+        hsl(var(--rainbow-purple)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .float-med {
+    animation: float-med 4.5s ease-in-out infinite;
+  }
+
+  .twinkle {
+    animation: twinkle 2.4s steps(2, end) infinite;
+  }
+
+  .glitch-pulse {
+    animation: glitch-pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@keyframes float-med {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+
+  50% {
+    opacity: 0.55;
+    filter: brightness(0.8);
+  }
+}
+
+@keyframes glitch-pulse {
+
+  0%,
+  100% {
+    filter: hue-rotate(0deg) drop-shadow(0 0 14px hsl(var(--hot-pink) / 0.6));
+  }
+
+  50% {
+    filter: hue-rotate(-20deg) drop-shadow(0 0 22px hsl(330 95% 75% / 0.8));
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+/* 1. O BOTÃO (BASE REFINADA) */
+wirluro-follow-btn {
+  position: relative;
+  padding: 12px 35px;
+  background: #000; /* Fundo preto para destacar o Rosa */
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 17px;
+  color: #fff;
+  border: 2px solid #FF006E;
+  border-radius: 19px;
+  cursor: pointer;
+  /* Transição de saída (Release) com efeito de mola */
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: visible; 
+  box-shadow: 0 4px 0px rgba(255, 0, 110, 0.3);
+}
+
+/* 2. ANIMAÇÃO IDLE DO TEXTO (WAVE) */
+.btn-letter {
+  display: inline-block;
+  animation: letter-wave 2.5s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes letter-wave {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(-3px); opacity: 1; color: #FF006E; }
+}
+
+/* 3. AS ESTRELAS (SISTEMA DE PARTÍCULAS) */
+/* Inicialmente escondidas no centro do botão */
+.star-1, .star-2, .star-3, .star-4, .star-5, .star-6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Começam no centro */
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.43, 1); /* Efeito de explosão */
+}
+
+/* 4. O HOVER (EXPLOSÃO CONTROLADA) */
+wirluro-follow-btn:hover {
+  background: transparent;
+  color: #FF006E;
+  box-shadow: 0 0 25px rgba(255, 0, 110, 0.4);
+  transform: scale(1.05);
+}
+
+/* Cada estrela com uma trajetória e rotação única via Translate */
+wirluro-follow-btn:hover .star-1 { opacity: 1; transform: translate(-80px, -60px) rotate(-20deg); transition-delay: 0s; }
+wirluro-follow-btn:hover .star-2 { opacity: 1; transform: translate(-40px, -90px) rotate(10deg); transition-delay: 0s; }
+wirluro-follow-btn:hover .star-3 { opacity: 1; transform: translate(10px, 80px) rotate(-30deg); transition-delay: 0s; }
+wirluro-follow-btn:hover .star-4 { opacity: 1; transform: translate(90px, -50px) rotate(20deg); transition-delay: 0s; }
+wirluro-follow-btn:hover .star-5 { opacity: 1; transform: translate(110px, 20px) rotate(-10deg); transition-delay: 0s; }
+wirluro-follow-btn:hover .star-6 { opacity: 1; transform: translate(40px, 70px) rotate(45deg); transition-delay: 0s; }
+
+/* 5. CLICK & HOLD (SENSORIAL) */
+wirluro-follow-btn:active {
+  transform: scale(0.92) translateY(2px);
+  box-shadow: 0 0px 0px rgba(255, 0, 110, 0);
+  filter: brightness(1.2);
+  transition: transform 0.1s ease;
+}
