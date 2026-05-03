@@ -1,4 +1,5 @@
 export const VIDEO_DATA = [
+  { id: "6wDbiQsDqG4", title: "SAROLU DAY | Behind the Stars | CBLOL", channel: "Vivo Keyd Stars", hue: 320 },
   { id: "2Xvvd0kgAE4", title: "Quanto Custa o Kami por Hora?", channel: "KamiKat", hue: 320 },
   { id: "sqHJehTaQew", title: "Kongjian Yu e o legado das Cidades Esponja", channel: "Engenharia Curiosa", hue: 200 },
   { id: "U1Xezpg9HJs", title: "+700 lojas em menos de 10 anos. O Segredo da Oakberry", channel: "Move On Marcas", hue: 280 },
