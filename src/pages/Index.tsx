@@ -392,21 +392,23 @@ const Index = () => {
 <PixelPanel title={<span>// showreel</span>}>
   <div className="relative w-full h-full overflow-hidden">
     <iframe
-      title="vimeo-player"
-      src="https://player.vimeo.com/video/1189439073?h=c0add98516&autoplay=1&loop=1&muted=1&background=1"
+      title="YouTube video player"
+      // Parâmetros: autoplay, mute, loop, sem controles e sem vídeos relacionados
+      src="https://www.youtube.com/embed/26p3XjxoZ6w?autoplay=1&mute=1&loop=1&playlist=26p3XjxoZ6w&controls=0&modestbranding=1&rel=0&iv_load_policy=3"
       frameBorder="0"
-      allow="autoplay; fullscreen; picture-in-picture"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
       allowFullScreen
-      className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2"
-      style={{ 
-        width: '177.77vh', /* 16:9 proporção baseada na altura */
-        minWidth: '100%',
-        minHeight: '100%',
-        pointerEvents: 'none'
+      className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[1.35]"
+      style={{
+        width: '100%',
+        height: '100%',
+        aspectRatio: '16/9',
+        objectFit: 'cover'
       }}
     ></iframe>
 
-    {/* Overlay de Scanlines (mantendo seu estilo) */}
+    {/* Overlay de Scanlines */}
     <div
       className="absolute inset-0 pointer-events-none opacity-[0.12] z-10"
       style={{
