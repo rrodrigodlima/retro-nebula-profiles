@@ -390,24 +390,32 @@ const Index = () => {
           <div className="col-span-12 md:col-span-8 lg:col-span-9 space-y-4">
             {/* Lore & Blurbs combined */}
 <PixelPanel title={<span>// showreel</span>}>
-              <iframe
-                title="vimeo-player"
-                src="https://player.vimeo.com/video/1189439073?h=c0add98516&autoplay=1&loop=1&muted=1&background=1"
-                width="640"
-                height="360"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-                className="-m-3 block w-[calc(100%+1.5rem)] max-w-none h-full object-cover"
-              ></iframe>
-              <div
-                className="absolute inset-0 pointer-events-none opacity-[0.12] z-10"
-                style={{
-                  backgroundImage: 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%)',
-                  backgroundSize: '100% 4px'
-                }}
-              ></div>
-            </PixelPanel>
+  <div className="relative w-full h-full overflow-hidden">
+    <iframe
+      title="vimeo-player"
+      src="https://player.vimeo.com/video/1189439073?h=c0add98516&autoplay=1&loop=1&muted=1&background=1"
+      frameBorder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowFullScreen
+      className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2"
+      style={{ 
+        width: '177.77vh', /* 16:9 proporção baseada na altura */
+        minWidth: '100%',
+        minHeight: '100%',
+        pointerEvents: 'none'
+      }}
+    ></iframe>
+
+    {/* Overlay de Scanlines (mantendo seu estilo) */}
+    <div
+      className="absolute inset-0 pointer-events-none opacity-[0.12] z-10"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%)',
+        backgroundSize: '100% 4px'
+      }}
+    ></div>
+  </div>
+</PixelPanel>
 
 
 
