@@ -391,7 +391,7 @@ const Index = () => {
             {/* Lore & Blurbs combined */}
             <PixelPanel title={<span>// showreel</span>}>
               <video
-                src="https://7visions.vercel.app/video/video-3.mp4"
+                src="{showReel}"
                 autoPlay
                 loop
                 muted
