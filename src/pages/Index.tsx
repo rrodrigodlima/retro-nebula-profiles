@@ -267,7 +267,7 @@ const Index = () => {
             >
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  { title: "amor fati.", channel: "Tinocando TV", hue: 320 },
+                  { title: "amor fati.", channel: "Tinocando TV", hue: 320, embed: "26p3XjxoZ6w" },
                   { title: "GUERRA DA COREIA - A HISTÓRIA", channel: "Canal Nostalgia", hue: 200 },
                   { title: "VINIZX: TIMIDEZ, BULLYING E SUP", channel: "LOUD", hue: 280 },
                   { title: "lo-fi beats to cry to", channel: "starboy_99", hue: 250 },
@@ -276,7 +276,7 @@ const Index = () => {
                   { title: "vlog: galaxy walk 🌌", channel: "milkii", hue: 300 },
                   { title: "y2k aesthetic compilation", channel: "antenna.exe", hue: 340 },
                   { title: "speedrun: world record", channel: "lemi", hue: 100 },
-                ].map((v) => (
+                ].map((v: { title: string; channel: string; hue: number; embed?: string }) => (
                   <div key={v.title} className="border-2 border-panel-edge/60 bg-space-deep/60 overflow-hidden">
                     <div
                       className="relative aspect-video flex items-center justify-center"
@@ -284,25 +284,38 @@ const Index = () => {
                         background: `linear-gradient(135deg, hsl(${v.hue} 70% 35%), hsl(${v.hue + 30} 60% 18%))`,
                       }}
                     >
-                      <div
-                        className="w-10 h-7 flex items-center justify-center rounded-sm"
-                        style={{ background: "hsl(0 90% 50%)", boxShadow: "0 0 12px hsl(0 90% 50% / 0.6)" }}
-                      >
-                        <span className="text-white text-sm leading-none">▶</span>
-                      </div>
-                      <div className="absolute top-1 left-1 right-1">
-                        <p className="pixel-text text-[8px] text-white leading-tight line-clamp-2"
-                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
-                          {v.title}
-                        </p>
-                        <p className="digital-text text-xs text-white/80"
-                           style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
-                          {v.channel}
-                        </p>
-                      </div>
-                      <div className="absolute bottom-1 right-1 digital-text text-[10px] text-white/70">
-                        ▶ YouTube
-                      </div>
+                      {v.embed ? (
+                        <iframe
+                          className="absolute inset-0 w-full h-full"
+                          src={`https://www.youtube.com/embed/${v.embed}?autoplay=1&mute=1&loop=1&playlist=${v.embed}&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                          title={v.title}
+                          allow="autoplay; encrypted-media; picture-in-picture"
+                          allowFullScreen
+                          frameBorder={0}
+                        />
+                      ) : (
+                        <>
+                          <div
+                            className="w-10 h-7 flex items-center justify-center rounded-sm"
+                            style={{ background: "hsl(0 90% 50%)", boxShadow: "0 0 12px hsl(0 90% 50% / 0.6)" }}
+                          >
+                            <span className="text-white text-sm leading-none">▶</span>
+                          </div>
+                          <div className="absolute top-1 left-1 right-1">
+                            <p className="pixel-text text-[8px] text-white leading-tight line-clamp-2"
+                               style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
+                              {v.title}
+                            </p>
+                            <p className="digital-text text-xs text-white/80"
+                               style={{ textShadow: "1px 1px 0 hsl(0 0% 0% / 0.8)" }}>
+                              {v.channel}
+                            </p>
+                          </div>
+                          <div className="absolute bottom-1 right-1 digital-text text-[10px] text-white/70">
+                            ▶ YouTube
+                          </div>
+                        </>
+                      )}
                     </div>
                     <div className="px-2 py-1 flex items-center gap-1">
                       <span className="pixel-text text-[8px] text-hot-pink">VÍDEO</span>
