@@ -267,7 +267,7 @@ const Index = () => {
             >
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  { title: "amor fati.", channel: "Tinocando TV", hue: 320 },
+                  { title: "amor fati.", channel: "Tinocando TV", hue: 320, embed: "26p3XjxoZ6w" },
                   { title: "GUERRA DA COREIA - A HISTÓRIA", channel: "Canal Nostalgia", hue: 200 },
                   { title: "VINIZX: TIMIDEZ, BULLYING E SUP", channel: "LOUD", hue: 280 },
                   { title: "lo-fi beats to cry to", channel: "starboy_99", hue: 250 },
