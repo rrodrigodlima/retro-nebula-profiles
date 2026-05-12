@@ -144,29 +144,29 @@ const Index = () => {
 
                 {/* Informações de Texto */}
                 <div className="text-left w-full space-y-1 px-1">
-<h2 
-  className="pixel-text text-[30px] leading-none"
-  style={{
-    color: '#FFFFFF',
-    // Aplicando a Georgia Bold Italic que você definiu globalmente
-    fontFamily: 'Georgia, serif',
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-    // Glow em camadas: Definição branca + Aura Hot Pink
-    textShadow: `
+                  <h2
+                    className="pixel-text text-[30px] leading-none"
+                    style={{
+                      color: '#FFFFFF',
+                      // Aplicando a Georgia Bold Italic que você definiu globalmente
+                      fontFamily: 'Georgia, serif',
+                      fontWeight: 'bold',
+                      fontStyle: 'italic',
+                      // Glow em camadas: Definição branca + Aura Hot Pink
+                      textShadow: `
       0 0 7px rgba(255, 255, 255, 0.9),
       0 0 15px rgba(255, 0, 110, 0.7),
       0 0 25px rgba(255, 0, 110, 0.4),
       0 0 40px rgba(255, 0, 110, 0.2)
     `,
-    // Evita que o brilho seja cortado e suaviza o render
-    padding: '0 10px',
-    margin: '0 -10px',
-    filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.5))'
-  }}
->
-  Lumi
-</h2>
+                      // Evita que o brilho seja cortado e suaviza o render
+                      padding: '0 10px',
+                      margin: '0 -10px',
+                      filter: 'drop-shadow(0 0 2px rgba(255, 255, 255, 0.5))'
+                    }}
+                  >
+                    Lumi
+                  </h2>
                   <p
                     className="digital-text text-[10px] uppercase tracking-[0.2em]"
                     style={{
@@ -188,9 +188,9 @@ const Index = () => {
                   >
                     Digital Artist &<br></br>Motion Designer
                   </p>
-                  <p 
-                  style={{ 
-                    textShadow: `
+                  <p
+                    style={{
+                      textShadow: `
                         0 0 5px #ffffff6c,
                         0 0 12px #ffffff98
                       `,
@@ -199,9 +199,9 @@ const Index = () => {
                       fontSize: '12px',
                       color: '#ffffff',
                       filter: 'drop-shadow(0 0 1px rgba(255, 0, 110, 0.2))'
-                   }}
-                  className="digital-text text-xs text-white/50 italic mt-2">
-                    Currently @ Vivo Keyd Stars 
+                    }}
+                    className="digital-text text-xs text-white/50 italic mt-2">
+                    Currently @ Vivo Keyd Stars
                   </p>
                 </div>
 
@@ -245,24 +245,24 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="w-full"
                 >
-<button className="wirluro-follow-btn group relative">
-  {/* Texto com Animação Idle Staggered */}
-  <span className="txt-container">
-    {["F", "o", "l", "l", "o", "w", " ", "m", "e"].map((char, i) => (
-      <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
-        {char === " " ? "\u00A0" : char}
-      </span>
-    ))}
-  </span>
+                  <button className="wirluro-follow-btn group relative">
+                    {/* Texto com Animação Idle Staggered */}
+                    <span className="txt-container">
+                      {["F", "o", "l", "l", "o", "w", " ", "m", "e"].map((char, i) => (
+                        <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
+                          {char === " " ? "\u00A0" : char}
+                        </span>
+                      ))}
+                    </span>
 
-  {/* Partículas/Ícones de Explosão (Ajustados para o seu tema) */}
-  <div className="particle star-1">🤍</div>
-  <div className="particle star-2">🤍</div>
-  <div className="particle star-3">🤍</div>
-  <div className="particle star-4">🤍</div>
-  <div className="particle star-5">🤍</div>
-  <div className="particle star-6">🤍</div>
-</button>
+                    {/* Partículas/Ícones de Explosão (Ajustados para o seu tema) */}
+                    <div className="particle star-1">🤍</div>
+                    <div className="particle star-2">🤍</div>
+                    <div className="particle star-3">🤍</div>
+                    <div className="particle star-4">🤍</div>
+                    <div className="particle star-5">🤍</div>
+                    <div className="particle star-6">🤍</div>
+                  </button>
                 </a>
 
                 {/* Status Chips */}
@@ -389,17 +389,17 @@ const Index = () => {
           {/* ===== CENTER COLUMN ===== */}
           <div className="col-span-12 md:col-span-8 lg:col-span-9 space-y-4">
             {/* Lore & Blurbs combined */}
-            <PixelPanel title={<span>// showreel</span>}>
-<iframe 
-  title="vimeo-player" 
-  src="https://player.vimeo.com/video/1189439073?h=c0add98516&autoplay=1&loop=1&muted=1&background=1" 
-  width="640" 
-  height="360" 
-  frameborder="0" 
-  allow="autoplay; fullscreen; picture-in-picture" 
-  allowfullscreen
-  className="-m-3 block w-[calc(100%+1.5rem)] max-w-none h-full object-cover"
-></iframe>
+<PixelPanel title={<span>// showreel</span>}>
+              <iframe
+                title="vimeo-player"
+                src="https://player.vimeo.com/video/1189439073?h=c0add98516&autoplay=1&loop=1&muted=1&background=1"
+                width="640"
+                height="360"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                className="-m-3 block w-[calc(100%+1.5rem)] max-w-none h-full object-cover"
+              ></iframe>
               <div
                 className="absolute inset-0 pointer-events-none opacity-[0.12] z-10"
                 style={{
@@ -455,31 +455,31 @@ const Index = () => {
                         {/* Barra HUD (Degradê de Preto com Info) */}
                         <div className="absolute bottom-0 left-0 right-0 z-30 p-2.5 bg-gradient-to-t from-black via-black/85 to-transparent">
                           <div className="flex items-center gap-1.5">
-{/* TAG VIDEO - Mais discreta e fina */}
-<span 
-  className="pixel-text text-[8px] px-1.5 py-0.5 border border-hot-pink/60 bg-black/40 uppercase tracking-[0.2em]"
-  style={{
-    color: '#FF006E',
-    fontFamily: "'VT323', monospace",
-  }}
->
-  video
-</span>
+                            {/* TAG VIDEO - Mais discreta e fina */}
+                            <span
+                              className="pixel-text text-[8px] px-1.5 py-0.5 border border-hot-pink/60 bg-black/40 uppercase tracking-[0.2em]"
+                              style={{
+                                color: '#FF006E',
+                                fontFamily: "'VT323', monospace",
+                              }}
+                            >
+                              video
+                            </span>
 
-{/* TÍTULO DO CANAL - Elegante e harmônico */}
-<h3 
-  className="digital-text text-[13px] text-white/90 leading-tight truncate mt-1.5"
-  style={{
-    fontFamily: 'Georgia, serif',
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-    // Um glow muito leve, quase imperceptível, apenas para separar do fundo
-    textShadow: '0 1px 3px rgba(0,0,0,0.8)', 
-    letterSpacing: '0.02em'
-  }}
->
-  {v.channel}
-</h3>
+                            {/* TÍTULO DO CANAL - Elegante e harmônico */}
+                            <h3
+                              className="digital-text text-[13px] text-white/90 leading-tight truncate mt-1.5"
+                              style={{
+                                fontFamily: 'Georgia, serif',
+                                fontWeight: 'bold',
+                                fontStyle: 'italic',
+                                // Um glow muito leve, quase imperceptível, apenas para separar do fundo
+                                textShadow: '0 1px 3px rgba(0,0,0,0.8)',
+                                letterSpacing: '0.02em'
+                              }}
+                            >
+                              {v.channel}
+                            </h3>
                           </div>
                         </div>
 
