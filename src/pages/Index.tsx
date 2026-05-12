@@ -1,6 +1,7 @@
 import { PixelPanel } from "@/components/PixelPanel";
 import { Top8Grid } from "@/components/Top8Grid";
 import { ProfileSong } from "@/components/ProfileSong";
+import { MessageButton } from "@/components/MessageButton";
 
 import spaceBg from "@/assets/word-sky-pattern.png";
 import cindAvatar from "@/assets/cind-avatar.png";
@@ -116,7 +117,7 @@ const Index = () => {
                   <span className="digital-text text-base text-foreground">177 badges received</span>
                 </div>
 
-                <button className="pixel-btn w-full justify-center">message</button>
+                <MessageButton />
 
                 {/* mood / status pixel chips */}
                 <div className="w-full grid grid-cols-2 gap-1 pt-1">
