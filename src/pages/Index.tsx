@@ -391,7 +391,7 @@ const Index = () => {
             {/* Lore & Blurbs combined */}
             <PixelPanel title={<span>// showreel</span>}>
               <video
-                src="{showReel}"
+                src={showReel}
                 autoPlay
                 loop
                 muted
