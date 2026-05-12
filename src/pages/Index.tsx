@@ -201,53 +201,16 @@ const Index = () => {
           {/* ===== CENTER COLUMN ===== */}
           <div className="col-span-12 md:col-span-8 lg:col-span-9 space-y-4">
             {/* Lore & Blurbs combined */}
-            <PixelPanel title={<span>cind's Lore <span className="opacity-60">/</span> cind's Blurbs</span>}>
-              <div className="relative">
-                {/* Portrait */}
-                <div className="relative mx-auto w-full max-w-md aspect-square border-2 border-panel-edge bg-space-deep overflow-hidden"
-                     style={{ boxShadow: "inset 0 0 40px hsl(var(--space-deep))" }}>
-                  <img
-                    src={cindPortrait}
-                    alt="large pixel art portrait of cind, dreamy and soft"
-                    width={768}
-                    height={768}
-                    className="w-full h-full object-contain"
-                  />
-
-                  {/* Lore widget overlay (top) */}
-                  <div className="absolute top-2 left-2 right-12 pixel-panel pixel-panel-pink !shadow-none p-2"
-                       style={{ boxShadow: "0 0 14px hsl(var(--hot-pink)/0.6)" }}>
-                    <p className="pixel-text text-[8px] text-hot-pink mb-1">// LORE</p>
-                    <p className="digital-text text-base leading-tight text-foreground">
-                      css broke... lazy to fix{" "}
-                      <span className="text-muted-foreground">(oh it fixed itself, hai everynyan)</span>
-                    </p>
-                  </div>
-
-                  {/* Blurbs widget overlay (bottom) */}
-                  <div className="absolute bottom-2 left-12 right-2 pixel-panel !shadow-none p-2"
-                       style={{ boxShadow: "0 0 14px hsl(var(--primary)/0.6)" }}>
-                    <p className="pixel-text text-[8px] text-primary mb-1">// BLURBS</p>
-                    <p className="digital-text text-base text-foreground">
-                      ./reaching the stars ./
-                    </p>
-                  </div>
-
-                  {/* corner sparkles */}
-                  <span className="absolute top-1/3 right-3 text-gold pixel-text text-base twinkle">✦</span>
-                  <span className="absolute bottom-1/3 left-3 text-hot-pink pixel-text text-xs twinkle">+</span>
-                </div>
-
-                {/* Footer menu links */}
-                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 justify-center">
-                  <a className="menu-link" href="#">View Journals</a>
-                  <span className="text-muted-foreground">|</span>
-                  <a className="menu-link" href="#">View Photos</a>
-                  <span className="text-muted-foreground">|</span>
-                  <a className="menu-link" href="#">View Groups</a>
-                  <span className="text-muted-foreground">|</span>
-                  <a className="menu-link" href="#">View Places</a>
-                </div>
+            <PixelPanel title={<span>cind's Lore <span className="opacity-60">/</span> cind's Blurbs</span>} bodyClassName="!p-0">
+              <div className="relative w-full aspect-video bg-space-deep overflow-hidden">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/26p3XjxoZ6w?autoplay=1&mute=1&loop=1&playlist=26p3XjxoZ6w&controls=0&modestbranding=1&playsinline=1&rel=0"
+                  title="amor fati."
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                  frameBorder={0}
+                />
               </div>
             </PixelPanel>
 
@@ -267,7 +230,7 @@ const Index = () => {
             >
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  { title: "amor fati.", channel: "Tinocando TV", hue: 320, embed: "26p3XjxoZ6w" },
+                  { title: "amor fati.", channel: "Tinocando TV", hue: 320 },
                   { title: "GUERRA DA COREIA - A HISTÓRIA", channel: "Canal Nostalgia", hue: 200 },
                   { title: "VINIZX: TIMIDEZ, BULLYING E SUP", channel: "LOUD", hue: 280 },
                   { title: "lo-fi beats to cry to", channel: "starboy_99", hue: 250 },
