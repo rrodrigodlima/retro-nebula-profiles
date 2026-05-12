@@ -390,14 +390,16 @@ const Index = () => {
           <div className="col-span-12 md:col-span-8 lg:col-span-9 space-y-4">
             {/* Lore & Blurbs combined */}
             <PixelPanel title={<span>// showreel</span>}>
-              <video
-                src="https://7visions.vercel.app/video/video-3.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="-m-3 block w-[calc(100%+1.5rem)] max-w-none h-full object-cover"
-              />
+<iframe 
+  title="vimeo-player" 
+  src="https://player.vimeo.com/video/1189439073?h=c0add98516&autoplay=1&loop=1&muted=1&background=1" 
+  width="640" 
+  height="360" 
+  frameborder="0" 
+  allow="autoplay; fullscreen; picture-in-picture" 
+  allowfullscreen
+  className="-m-3 block w-[calc(100%+1.5rem)] max-w-none h-full object-cover"
+></iframe>
               <div
                 className="absolute inset-0 pointer-events-none opacity-[0.12] z-10"
                 style={{
