@@ -1,5 +1,6 @@
 export const VIDEO_DATA = [
-  { id: "6wDbiQsDqG4", title: "SAROLU DAY | Behind the Stars | CBLOL", channel: "Vivo Keyd Stars", hue: 320 },
+  { id: "wgxC_KYxdMo", title: "DECEPÇÃO | Behind the Stars | CBLOL", channel: "Vivo Keyd Stars", hue: 320 },
+  { id: "ULL8KuMrcd4", title: "WIZER CARREGOU DE TEEMO? | Desafio by Havit", channel: "Vivo Keyd Stars", hue: 340 },
   { id: "2Xvvd0kgAE4", title: "Quanto Custa o Kami por Hora?", channel: "KamiKat", hue: 320 },
   { id: "sqHJehTaQew", title: "Kongjian Yu e o legado das Cidades Esponja", channel: "Engenharia Curiosa", hue: 200 },
   { id: "U1Xezpg9HJs", title: "+700 lojas em menos de 10 anos. O Segredo da Oakberry", channel: "Move On Marcas", hue: 280 },
@@ -7,7 +8,6 @@ export const VIDEO_DATA = [
   { id: "YYcxu1lYuM0", title: "1,000 MPH Car vs Mega Ramp in Wobbly Life!", channel: "UnspeakablePlays", hue: 20 },
   { id: "tU3MHFgzg-s", title: "Why Typical Gamer Doesn't have an icon skin.", channel: "Chica", hue: 160 },
   { id: "4ntMJnBJk6Y", title: "ESTE JUEGO CASI ROMPIO NUESTRA AMISTAD..💔", channel: "Soy IBella", hue: 300 },
-  { id: "pEVbRhIbf-k", title: "A verdadeira história do Allianz Parque com detalhes inéditos!!", channel: "Engenharia Curiosa", hue: 340 },
   { id: "s8HqzMQKUfI", title: "O JOGO DE CLASH MAIS LONGO DA HISTORIA", channel: "Professor Alan Joga", hue: 100 },
   { id: "0Zn-_MnXJdo", title: "RACE TO SURVIVE Bike Lines With MY CRAZY FAN GIRLS…", channel: "SpinnyBlox", hue: 100 },
   { id: "6qMi-50Rt3w", title: "LEVEI MINHA NAMORADA NA BGS 2025!! | BRASIL GAME SHOW 2025 - VLOG", channel: "LimaMosca", hue: 100 },
@@ -21,7 +21,7 @@ export const SHORTS_DATA = [
   { id: "m_VeT1QA2nk", title: "Especialização de Implantodontia", channel: "INCO25", hue: 130 },
   { id: "qjBoQywTAjU", title: "Imobiliária que cumpre valores", channel: "Rosina Figueiredo", hue: 280 },
   { id: "fVjIeHzGCb8", title: "Vocês vão pagar minha terapia", channel: "LumiUchiha", hue: 340 },
-  { id: "n1pBx9814KU", title: "NÃO HÁ FERROLHO... NEM POOOOORTA", channel: "LumiUchiha", hue: 50 },
+  { id: "649_k0Jrx6Q", title: "SUBSCRIBE", channel: "IBella", hue: 50 },
   { id: "7FfhIB2N0R4", title: "Flechada explosiva ou uma piasada misteriosa?", channel: "LumiUchiha", hue: 150 },
 ];
 
