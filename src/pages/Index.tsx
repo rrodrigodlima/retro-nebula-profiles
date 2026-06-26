@@ -238,32 +238,31 @@ const Index = () => {
                     </a>
                   ))}
                 </div>
-                {/* Botão Principal CTA - Restaurado para Estética do Painel */}
-                <a
-                  href="https://api.whatsapp.com/send/?phone=71992293406&text=Estou+interessado+em+seu+trabalhoo&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <button className="wirluro-follow-btn group relative">
-                    {/* Texto com Animação Idle Staggered */}
-                    <span className="txt-container">
-                      {["F", "o", "l", "l", "o", "w", " ", "m", "e"].map((char, i) => (
-                        <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
-                          {char === " " ? "\u00A0" : char}
-                        </span>
-                      ))}
-                    </span>
+<a
+  href="https://api.whatsapp.com/send/?phone=71992293406&text=Estou+interessado+em+seu+trabalhoo&type=phone_number&app_absent=0"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full flex justify-center"
+>
+  <button className="wirluro-follow-btn">
+    {/* Texto com Animação */}
+    <span className="txt-container">
+      {["F", "o", "l", "l", "o", "w", " ", "m", "e"].map((char, i) => (
+        <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </span>
 
-                    {/* Partículas/Ícones de Explosão (Ajustados para o seu tema) */}
-                    <div className="particle star-1">🤍</div>
-                    <div className="particle star-2">🤍</div>
-                    <div className="particle star-3">🤍</div>
-                    <div className="particle star-4">🤍</div>
-                    <div className="particle star-5">🤍</div>
-                    <div className="particle star-6">🤍</div>
-                  </button>
-                </a>
+    {/* Partículas de Explosão */}
+    <div className="particle star-1">🤍</div>
+    <div className="particle star-2">🤍</div>
+    <div className="particle star-3">🤍</div>
+    <div className="particle star-4">🤍</div>
+    <div className="particle star-5">🤍</div>
+    <div className="particle star-6">🤍</div>
+  </button>
+</a>
 
                 {/* Status Chips */}
                 {/* <div className="w-full grid grid-cols-2 gap-2">
