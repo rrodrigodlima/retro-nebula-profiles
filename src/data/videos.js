@@ -16,12 +16,12 @@ export const VIDEO_DATA = [
 
 export const SHORTS_DATA = [
   { id: "tny8tTJ1Ph0", title: "Farm de Doces - 99 Noites na Floresta!!", channel: "LimaMosca", hue: 220 },
+  { id: "649_k0Jrx6Q", title: "SUBSCRIBE", channel: "IBella", hue: 50 },
   { id: "gVhn9s-6yv8", title: "A fundação Louis Vuitton", channel: "Engenharia Curiosa", hue: 30 },
   { id: "sRQhgPqIrwQ", title: "Loção Stop Odor", channel: "Perigot", hue: 45 },
   { id: "m_VeT1QA2nk", title: "Especialização de Implantodontia", channel: "INCO25", hue: 130 },
   { id: "qjBoQywTAjU", title: "Imobiliária que cumpre valores", channel: "Rosina Figueiredo", hue: 280 },
   { id: "fVjIeHzGCb8", title: "Vocês vão pagar minha terapia", channel: "LumiUchiha", hue: 340 },
-  { id: "649_k0Jrx6Q", title: "SUBSCRIBE", channel: "IBella", hue: 50 },
   { id: "7FfhIB2N0R4", title: "Flechada explosiva ou uma piasada misteriosa?", channel: "LumiUchiha", hue: 150 },
 ];
 

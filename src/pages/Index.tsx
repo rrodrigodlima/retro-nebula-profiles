@@ -578,13 +578,20 @@ const Index = () => {
                           <span className="pixel-text text-[6px] text-hot-pink border border-hot-pink/40 bg-black/80 px-1 uppercase">
                             video
                           </span>
-                          <span className="digital-text text-[10px] text-white/70 truncate">
-                            {s.channel}
-                          </span>
+<h3 
+  className="digital-text text-[13px] text-white/90 leading-tight truncate mt-1.5"
+  style={{
+    fontFamily: 'Georgia, serif',
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+    // Um glow muito leve, quase imperceptível, apenas para separar do fundo
+    textShadow: '0 1px 3px rgba(0,0,0,0.8)', 
+    letterSpacing: '0.02em'
+  }}
+>
+  {s.channel}
+</h3>
                         </div>
-                        <p className="pixel-text text-[8px] text-white leading-tight line-clamp-2 group-hover:text-hot-pink transition-colors duration-300">
-                          {s.title}
-                        </p>
                       </div>
                     </div>
                   </button>
