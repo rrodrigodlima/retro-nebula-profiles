@@ -358,48 +358,64 @@
   animation: spin 3s linear infinite;
 }
 
-/* Note o ponto (.) antes do nome da classe */
+/* --- 1. AJUSTES DO BOTÃO BASE --- */
 .wirluro-follow-btn {
-  position: relative;
-  padding: 12px 35px;
-  background: #000;
-  font-family: 'Georgia', serif;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 17px;
-  color: #fff;
-  border: 2px solid #FF006E;
-  border-radius: 19px;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  overflow: visible; /* Mantenha visível para as partículas saírem */
-  box-shadow: 0 4px 0px rgba(255, 0, 110, 0.3);
+  /* Mantendo sua base, apenas garantindo que as partículas saiam */
+  overflow: visible !important;
+  /* Garante que o hover de cor seja suave */
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-/* Ajuste das partículas (usando a classe .particle que você colocou no JSX) */
-.particle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: 1; /* Garante que fiquem acima do botão */
-  pointer-events: none;
-  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.43, 1);
-}
+/* --- 2. A "ANIMAÇÃO DE LUZ" E HOVER (REVISADO) --- */
 
-/* O Hover agora aponta corretamente para a classe */
+/* Quando o mouse passa no botão, ele ganha o brilho rosa e texto rosa */
 .wirluro-follow-btn:hover {
-  background: transparent;
-  color: #FF006E;
-  box-shadow: 0 0 25px rgba(255, 0, 110, 0.4);
-  transform: scale(1.05);
+  background: transparent !important; /* Fundo transparente */
+  color: #FF006E !important; /* Texto rosa */
+  box-shadow: 0 0 35px rgba(255, 0, 110, 0.6) !important; /* Brilho rosa intenso */
+  transform: scale(1.05) !important;
 }
 
-/* As estrelas (usando a classe .particle + identificador único) */
-.wirluro-follow-btn:hover .star-1 { opacity: 1; transform: translate(-80px, -60px) rotate(-20deg); }
-.wirluro-follow-btn:hover .star-2 { opacity: 1; transform: translate(-40px, -90px) rotate(10deg); }
-.wirluro-follow-btn:hover .star-3 { opacity: 1; transform: translate(10px, 80px) rotate(-30deg); }
-.wirluro-follow-btn:hover .star-4 { opacity: 1; transform: translate(90px, -50px) rotate(20deg); }
-.wirluro-follow-btn:hover .star-5 { opacity: 1; transform: translate(110px, 20px) rotate(-10deg); }
-.wirluro-follow-btn:hover .star-6 { opacity: 1; transform: translate(40px, 70px) rotate(45deg); }
+/* Garantir que a animação de onda do texto também muda de cor no hover */
+.wirluro-follow-btn:hover .btn-letter {
+  animation: letter-wave-hover 2.5s ease-in-out infinite; /* Animação específica para o hover */
+}
+
+/* --- 3. ANIMAÇÕES DE ONDA DO TEXTO (@keyframes) --- */
+
+/* Animação Idle (Estado normal): O texto oscila e fica meio transparente */
+.btn-letter {
+  display: inline-block;
+  opacity: 0.6;
+  animation: letter-wave-idle 2.5s ease-in-out infinite;
+  transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+/* Keyframes: Onda padrão (oscilação e opacidade) */
+@keyframes letter-wave-idle {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-4px); /* Sobe um pouco mais */
+    opacity: 1;
+  }
+}
+
+/* Keyframes: Onda no Hover (oscilação + cor rosa fixa) */
+@keyframes letter-wave-hover {
+  0%, 100% {
+    transform: translateY(0);
+    color: #FF006E; /* Rosa fixo no hover */
+  }
+  50% {
+    transform: translateY(-4px);
+    color: #FF006E; /* Rosa fixo no hover */
+  }
+}
+
+/* --- 4. MANTER AS PARTÍCULAS (Garantir que funcionam) --- */
+.particle {
+  z-index: 10 !important; /* Garantir que fiquem acima */
+}
