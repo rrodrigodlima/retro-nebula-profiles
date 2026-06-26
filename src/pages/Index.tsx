@@ -245,16 +245,14 @@ const Index = () => {
   className="w-full flex justify-center"
 >
   <button className="wirluro-follow-btn">
-    {/* Texto com Animação */}
     <span className="txt-container">
-      {["F", "o", "l", "l", "o", "w", " ", "m", "e"].map((char, i) => (
+      {["M", "e", " ", "c", "h", "a", "m", "e"].map((char, i) => (
         <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
           {char === " " ? "\u00A0" : char}
         </span>
       ))}
     </span>
 
-    {/* Partículas de Explosão */}
     <div className="particle star-1">🤍</div>
     <div className="particle star-2">🤍</div>
     <div className="particle star-3">🤍</div>
