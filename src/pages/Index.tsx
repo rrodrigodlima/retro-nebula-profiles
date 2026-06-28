@@ -145,10 +145,10 @@ const Index = () => {
 
             {/* Top 8 */}
             <PixelPanel
-              title="cind's Top 8"
+              title="badges"
               rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
             >
-              <Top8Grid />
+              <BadgesGrid />
             </PixelPanel>
 
             {/* Badges showcase */}
