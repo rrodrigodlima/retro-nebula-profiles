@@ -369,6 +369,8 @@ const Index = () => {
           <div className="col-span-12 md:col-span-8 lg:col-span-9 space-y-4">
             {/* Lore & Blurbs combined */}
             <PixelPanel title={<span>// showreel</span>}>
+            <div className="relative w-full aspect-video bg-space-deep overflow-hidden flex items-center justify-center">
+
 <iframe
                   className="absolute pointer-events-none"
                   style={{
@@ -390,6 +392,7 @@ const Index = () => {
                   backgroundSize: '100% 4px'
                 }}
               ></div>
+            </div>
             </PixelPanel>
 
 
