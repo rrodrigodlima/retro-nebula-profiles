@@ -1,0 +1,45 @@
+.aero-arrow {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  padding: 0.3em;
+  border-radius: 100%;
+  border: 1px solid #2596be;
+  background: linear-gradient(#0000 50%, #8b0460 50%, #f980e9),
+              radial-gradient(circle, #b2308e, #e0bbd8 70.7%);
+  cursor: pointer;
+  isolation: isolate;
+  /* Adicionado para centralizar o SVG */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aero-arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(#0000 50%, #970162 50%, #ffa3f4),
+              radial-gradient(circle, #e038b1, #f2c7e7 70.7%);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.5s all;
+}
+
+.aero-arrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(#0000 50%, #2e011b 50%, #fd55af),
+              radial-gradient(circle, #7b295c, #ad8d9d 70.7%);
+  z-index: -1;
+  opacity: 0;
+}
+
+.aero-arrow:hover::before { opacity: 1; }
+.aero-arrow:hover { border: 1px solid #e05db6; }
+.aero-arrow:active:hover { border: 1px solid #48032b; }
+.aero-arrow:active::before { transition: 0s all; }
+.aero-arrow:active:hover::after { opacity: 1; }
