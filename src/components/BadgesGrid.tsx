@@ -19,7 +19,6 @@ const ALL = [
   { id: 12, src: b12 },
   { id: 13, src: b13 },
   { id: 14, src: b14 },
-  { id: 15, src: b15 },
 ];
 
 export const BadgesGrid = () => {
@@ -33,21 +32,21 @@ export const BadgesGrid = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-4 gap-3">
-      {shuffled.map((b) => (
-        <div
-          key={b.id} // Agora usamos o ID único
-          className="aspect-square flex items-center justify-center"
-          style={{ filter: "drop-shadow(0 0 6px hsl(var(--hot-pink) / 0.75))" }}
-        >
-          <img
-            src={b.src} // Corrigido: acessando a propriedade src
-            alt={`Badge ${b.id}`}
-            className="w-full h-full object-contain"
-            style={{ imageRendering: "pixelated" }}
-          />
-        </div>
-      ))}
+   <div className="grid grid-cols-4 gap-3">
+  {shuffled.map((b) => (
+    <div
+      key={b.id}
+      className="aspect-square flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
+      style={{ filter: "drop-shadow(0 0 6px hsl(var(--hot-pink) / 0.75))" }}
+    >
+      <img
+        src={b.src}
+        alt={`Badge ${b.id}`}
+        className="w-full h-full object-contain"
+        style={{ imageRendering: "pixelated" }}
+      />
     </div>
+  ))}
+</div>
   );
 };
