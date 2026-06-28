@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import RandomActButton from '@/components/RandomActButton';
+import BackToTop from '@/components/BackToTop';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <RandomActButton />
+      <BackToTop />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
