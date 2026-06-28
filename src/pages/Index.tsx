@@ -1,5 +1,5 @@
 import { PixelPanel } from "@/components/PixelPanel";
-import { Top8Grid } from "@/components/Top8Grid";
+import { BadgesGrid } from "@/components/BadgesGrid";
 import { ProfileSong } from "@/components/ProfileSong";
 import { useState } from 'react';
 import { motion } from "framer-motion";
@@ -338,7 +338,12 @@ const Index = () => {
             >
               <Top8Grid />
             </PixelPanel> */}
-
+            <PixelPanel
+              title="badges"
+              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
+            >
+              <BadgesGrid />
+            </PixelPanel>
             {/* Profile song */}
             <PixelPanel
               title={<span>♪ Profile Song</span>}
