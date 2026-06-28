@@ -1,5 +1,5 @@
 import { PixelPanel } from "@/components/PixelPanel";
-import { Top8Grid } from "@/components/Top8Grid";
+import { BadgesGrid } from "@/components/BadgesGrid";
 import { ProfileSong } from "@/components/ProfileSong";
 import { MessageButton } from "@/components/MessageButton";
 
