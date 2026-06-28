@@ -277,6 +277,39 @@
   .float-med { animation: float-med 4.5s ease-in-out infinite; }
   .twinkle { animation: twinkle 2.4s steps(2, end) infinite; }
   .glitch-pulse { animation: glitch-pulse 3s ease-in-out infinite; }
+
+  /* MSN-style rotating gradient ring around avatar */
+  .msn-avatar-ring {
+    position: relative;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .msn-avatar-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: conic-gradient(
+      from 0deg,
+      hsl(var(--hot-pink)),
+      hsl(330 100% 80%),
+      hsl(var(--primary)),
+      hsl(var(--hot-pink))
+    );
+    animation: msn-ring-spin 3s linear infinite;
+    filter: blur(2px);
+  }
+  .msn-avatar-ring::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    z-index: -1;
+    background: hsl(var(--space-deep));
+    border-radius: 2px;
+  }
 }
 
 @keyframes float-slow {
