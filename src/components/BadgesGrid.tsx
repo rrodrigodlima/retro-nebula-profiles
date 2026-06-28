@@ -11,11 +11,11 @@ import b15 from "@/assets/badges/badge-15.png";
 
 // Definimos um array de objetos para garantir que cada item tenha uma chave única
 const ALL = [
-  { id: 7, src: b7 },
+  { id: 7, src: b11 },
   { id: 8, src: b8 },
   { id: 9, src: b9 },
   { id: 10, src: b10 },
-  { id: 11, src: b11 },
+  { id: 11, src: b7 },
   { id: 12, src: b12 },
   { id: 13, src: b13 },
   { id: 14, src: b14 },
