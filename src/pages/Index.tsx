@@ -340,7 +340,6 @@ const Index = () => {
             </PixelPanel> */}
             <PixelPanel
               title="badges"
-              rightSlot={<a href="#" className="menu-link !text-[10px]">View All</a>}
             >
               <BadgesGrid />
             </PixelPanel>
