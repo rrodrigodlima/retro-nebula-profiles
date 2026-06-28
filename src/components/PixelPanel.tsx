@@ -69,7 +69,7 @@ export const PixelPanel = ({
           </div>
         </header>
       )}
-      <div className={cn("p-3 relative z-10", bodyClassName)}>
+      <div className={cn("p-3 relative", bodyClassName)}>
         {children}
       </div>
     </section>
