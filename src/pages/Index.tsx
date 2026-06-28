@@ -94,15 +94,17 @@ const Index = () => {
             {/* Profile panel */}
             <PixelPanel title="cind" variant="pink">
               <div className="flex flex-col items-center gap-3">
-                <div className="w-full aspect-square border-2 border-hot-pink bg-space-deep p-1"
-                     style={{ boxShadow: "0 0 18px hsl(var(--hot-pink)/0.5)" }}>
-                  <img
-                    src={cindAvatar}
-                    alt="pixel art portrait of cind crying with a rainbow star"
-                    width={512}
-                    height={512}
-                    className="w-full h-full object-contain"
-                  />
+                <div className="msn-avatar-ring">
+                  <div className="w-full aspect-square border-2 border-hot-pink bg-space-deep p-1"
+                       style={{ boxShadow: "0 0 18px hsl(var(--hot-pink)/0.5)" }}>
+                    <img
+                      src={cindAvatar}
+                      alt="pixel art portrait of cind crying with a rainbow star"
+                      width={512}
+                      height={512}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
                 <div className="text-center w-full">
                   <p className="pixel-text text-xs text-foreground">cind</p>
