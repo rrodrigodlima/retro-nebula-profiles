@@ -213,54 +213,36 @@ const Index = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all duration-500 hover: hover:border-white/40 hover:scale-110 shadow-[0_0_20px_rgba(255,0,110,0)] hover:shadow-[0_0_25px_rgba(255,0,110,0.6)]"
+                      className="vista-button"
+                      style={{ textDecoration: 'none', display: 'inline-block' }} // Garante o comportamento correto de bloco para links
                     >
-                      {/* Container Centralizado */}
-                      <div className="relative w-6 h-6 flex items-center justify-center">
-
-                        {/* Ícone Padrão: Diminui e some no fade */}
-                        <img
-                          src={social.icon}
-                          alt={social.name}
-                          className="absolute w-full h-full object-contain transition-all duration-500 ease-out opacity-100 scale-100 group-hover:opacity-0 group-hover:scale-50"
-                        />
-
-                        {/* Ícone Hover: Começa invisível, pequeno e cresce (Fade In + Scale) */}
-                        <img
-                          src={social.hover}
-                          alt={`${social.name} Hover`}
-                          className="absolute w-full h-full object-contain transition-all duration-500 ease-out opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-110"
-                        />
-                      </div>
-
-                      {/* Brilho extra de fundo para destacar o "crescimento" */}
-                      <div className="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500" />
+                      <div>{social.name}</div>
                     </a>
                   ))}
                 </div>
-<a
-  href="https://api.whatsapp.com/send/?phone=71992293406&text=Estou+interessado+em+seu+trabalhoo&type=phone_number&app_absent=0"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full flex justify-center"
->
-  <button className="wirluro-follow-btn">
-    <span className="txt-container">
-      {["M", "e", " ", "c", "h", "a", "m", "e"].map((char, i) => (
-        <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
-          {char === " " ? "\u00A0" : char}
-        </span>
-      ))}
-    </span>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=71992293406&text=Estou+interessado+em+seu+trabalhoo&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex justify-center"
+                >
+                  <button className="wirluro-follow-btn">
+                    <span className="txt-container">
+                      {["M", "e", " ", "c", "h", "a", "m", "e"].map((char, i) => (
+                        <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
+                          {char === " " ? "\u00A0" : char}
+                        </span>
+                      ))}
+                    </span>
 
-    <div className="particle star-1">🤍</div>
-    <div className="particle star-2">🤍</div>
-    <div className="particle star-3">🤍</div>
-    <div className="particle star-4">🤍</div>
-    <div className="particle star-5">🤍</div>
-    <div className="particle star-6">🤍</div>
-  </button>
-</a>
+                    <div className="particle star-1">🤍</div>
+                    <div className="particle star-2">🤍</div>
+                    <div className="particle star-3">🤍</div>
+                    <div className="particle star-4">🤍</div>
+                    <div className="particle star-5">🤍</div>
+                    <div className="particle star-6">🤍</div>
+                  </button>
+                </a>
 
                 {/* Status Chips */}
                 {/* <div className="w-full grid grid-cols-2 gap-2">
