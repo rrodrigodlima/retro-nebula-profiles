@@ -328,3 +328,7 @@
   0%, 100% { filter: hue-rotate(0deg) drop-shadow(0 0 14px hsl(var(--hot-pink) / 0.6)); }
   50% { filter: hue-rotate(-20deg) drop-shadow(0 0 22px hsl(330 95% 75% / 0.8)); }
 }
+@keyframes msn-ring-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
