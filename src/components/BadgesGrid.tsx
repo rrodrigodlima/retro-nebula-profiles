@@ -1,13 +1,13 @@
 import { useMemo } from "react";
-import b7 from "@/assets/badges/badge-7.png.asset.json";
-import b8 from "@/assets/badges/badge-8.png.asset.json";
-import b9 from "@/assets/badges/badge-9.png.asset.json";
-import b10 from "@/assets/badges/badge-10.png.asset.json";
-import b11 from "@/assets/badges/badge-11.png.asset.json";
-import b12 from "@/assets/badges/badge-12.png.asset.json";
-import b13 from "@/assets/badges/badge-13.png.asset.json";
-import b14 from "@/assets/badges/badge-14.png.asset.json";
-import b15 from "@/assets/badges/badge-15.png.asset.json";
+import b7 from "@/assets/badges/badge-7.png";
+import b8 from "@/assets/badges/badge-8.png";
+import b9 from "@/assets/badges/badge-9.png";
+import b10 from "@/assets/badges/badge-10.png";
+import b11 from "@/assets/badges/badge-11.png";
+import b12 from "@/assets/badges/badge-12.png";
+import b13 from "@/assets/badges/badge-13.png";
+import b14 from "@/assets/badges/badge-14.png";
+import b15 from "@/assets/badges/badge-15.png";
 
 const ALL = [b7, b8, b9, b10, b11, b12, b13, b14, b15];
 
