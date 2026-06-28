@@ -277,6 +277,33 @@
   .float-med { animation: float-med 4.5s ease-in-out infinite; }
   .twinkle { animation: twinkle 2.4s steps(2, end) infinite; }
   .glitch-pulse { animation: glitch-pulse 3s ease-in-out infinite; }
+
+  /* MSN-style rotating gradient ring around avatar */
+  .msn-avatar-ring {
+    position: relative;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .msn-avatar-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(
+      from 0deg,
+      hsl(var(--hot-pink)),
+      hsl(330 100% 80%),
+      hsl(var(--primary)),
+      hsl(var(--hot-pink))
+    );
+    animation: msn-ring-spin 3s linear infinite;
+    filter: blur(2px);
+  }
+  .msn-avatar-ring > div {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @keyframes float-slow {
@@ -294,4 +321,8 @@
 @keyframes glitch-pulse {
   0%, 100% { filter: hue-rotate(0deg) drop-shadow(0 0 14px hsl(var(--hot-pink) / 0.6)); }
   50% { filter: hue-rotate(-20deg) drop-shadow(0 0 22px hsl(330 95% 75% / 0.8)); }
+}
+@keyframes msn-ring-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
