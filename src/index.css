@@ -428,6 +428,7 @@
   border: 1px solid black;
   border-radius: 4px;
   color: #fff;
+  font-weight: normal; /* 👈 ADICIONE ESTA LINHA PARA TIRAR O BOLD */
   text-shadow: 1px 1px #000;
   box-shadow:
     inset 0px 4px 4px -3px #fff0,
