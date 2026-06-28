@@ -285,13 +285,11 @@
     padding: 4px;
     border-radius: 4px;
     overflow: hidden;
-    z-index: 1;
   }
   .msn-avatar-ring::before {
     content: '';
     position: absolute;
     inset: 0;
-    z-index: -1;
     background: conic-gradient(
       from 0deg,
       hsl(var(--hot-pink)),
@@ -302,13 +300,9 @@
     animation: msn-ring-spin 3s linear infinite;
     filter: blur(2px);
   }
-  .msn-avatar-ring::after {
-    content: '';
-    position: absolute;
-    inset: 2px;
-    z-index: -1;
-    background: hsl(var(--space-deep));
-    border-radius: 2px;
+  .msn-avatar-ring > div {
+    position: relative;
+    z-index: 1;
   }
 }
 
