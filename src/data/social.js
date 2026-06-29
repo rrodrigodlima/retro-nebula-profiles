@@ -6,7 +6,7 @@ import ttIcon from "../assets/twitter1.png";
 import ttHover from "../assets/twitter2.png";
 
 export const SOCIAL_DATA = [
-  { id: 'tt', name: 'Twitter', icon: ttIcon, hover: ttHover, url: '#' },
-  { id: 'ig', name: 'Instagram', icon: igIcon, hover: igHover, url: '#' },
+  { id: 'tt', name: 'Twitter', icon: ttIcon, hover: ttHover, url: 'https://x.com/LumiUchiha' },
+  { id: 'ig', name: 'Behance', icon: igIcon, hover: igHover, url: 'https://www.behance.net/LumiUchiha' },
   { id: 'dc', name: 'Discord', icon: dcIcon, hover: dcHover, url: '#' },
 ];
