@@ -376,17 +376,17 @@ const Index = () => {
             <div className="relative w-full aspect-video bg-space-deep overflow-hidden flex items-center justify-center">
 
 <iframe
-                  className="absolute pointer-events-none"
-                  style={{
-                    left: "-10%",
-                    width: "120%",
-                    height: "100%",
-                  }}
-                  src="https://www.youtube.com/embed/nTZsMQ8MzwM?autoplay=1&mute=1&loop=1&playlist=26p3XjxoZ6w&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
-                  title="amor fati."
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  frameBorder={0}
-                />
+  className="absolute pointer-events-none"
+  style={{
+    left: "-10%",
+    width: "120%",
+    height: "100%",
+  }}
+  src="https://www.youtube.com/embed/nTZsMQ8MzwM?autoplay=1&mute=1&loop=1&playlist=nTZsMQ8MzwM&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
+  title="novo video"
+  allow="autoplay; encrypted-media; picture-in-picture"
+  frameBorder={0}
+/>
 
               <div
                 className="absolute inset-0 pointer-events-none opacity-[0.12] z-10"
