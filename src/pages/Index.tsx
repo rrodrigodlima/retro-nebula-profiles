@@ -382,7 +382,7 @@ const Index = () => {
                     width: "120%",
                     height: "100%",
                   }}
-                  src="https://www.youtube.com/embed/26p3XjxoZ6w?autoplay=1&mute=1&loop=1&playlist=26p3XjxoZ6w&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
+                  src="https://www.youtube.com/embed/nTZsMQ8MzwM?autoplay=1&mute=1&loop=1&playlist=26p3XjxoZ6w&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
                   title="amor fati."
                   allow="autoplay; encrypted-media; picture-in-picture"
                   frameBorder={0}
