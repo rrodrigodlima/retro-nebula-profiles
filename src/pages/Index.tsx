@@ -228,7 +228,7 @@ const Index = () => {
                 >
                   <button className="wirluro-follow-btn">
                     <span className="txt-container">
-                      {["M", "e", " ", "c", "h", "a", "m", "e"].map((char, i) => (
+                      {["F", "a", "l", "e", " ", "c", "o", "m", "i", "g", "o"].map((char, i) => (
                         <span key={i} className="btn-letter" style={{ animationDelay: `${i * 0.1}s` }}>
                           {char === " " ? "\u00A0" : char}
                         </span>
@@ -339,7 +339,7 @@ const Index = () => {
               <Top8Grid />
             </PixelPanel> */}
             <PixelPanel
-              title="badges"
+              title="✦ badges"
             >
               <BadgesGrid />
             </PixelPanel>
@@ -497,7 +497,7 @@ const Index = () => {
                       onClick={closeModal}
                       className="absolute -top-12 right-0 pixel-text text-hot-pink hover:text-white transition-colors text-lg"
                     >
-                      [ FECHAR X ]
+                      [ X ]
                     </button>
 
                     {/* O Player */}

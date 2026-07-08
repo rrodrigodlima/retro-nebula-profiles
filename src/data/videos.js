@@ -10,7 +10,7 @@ export const VIDEO_DATA = [
   { id: "q6qPZnGMtyY", title: "Brookhaven", channel: "IBella", hue: 160 },
   { id: "vjTSPjuF7b0", title: "SLEEPOVER", channel: "IBella", hue: 160 },
   { id: "4ntMJnBJk6Y", title: "ESTE JUEGO CASI ROMPIO NUESTRA AMISTAD..💔", channel: "Soy IBella", hue: 300 },
-  { id: "s8HqzMQKUfI", title: "O JOGO DE CLASH MAIS LONGO DA HISTORIA", channel: "Professor Alan Joga", hue: 100 },
+  { id: "4NvZV6qhgQs", title: "O JOGO DE CLASH MAIS LONGO DA HISTORIA", channel: "Professor Alan Joga", hue: 100 },
   { id: "0Zn-_MnXJdo", title: "RACE TO SURVIVE Bike Lines With MY CRAZY FAN GIRLS…", channel: "SpinnyBlox", hue: 100 },
   { id: "6qMi-50Rt3w", title: "LEVEI MINHA NAMORADA NA BGS 2025!! | BRASIL GAME SHOW 2025 - VLOG", channel: "LimaMosca", hue: 100 },
   { id: "EH9GLaleVpI", title: "DERROTAMOS O DEMONGORGON DE STRANGER THINGS | DEADLY DELIVERY - ROBLOX", channel: "LimaMosca", hue: 100 },
