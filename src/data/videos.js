@@ -5,7 +5,6 @@ export const VIDEO_DATA = [
   { id: "sqHJehTaQew", title: "Kongjian Yu e o legado das Cidades Esponja", channel: "Engenharia Curiosa", hue: 200 },
   { id: "U1Xezpg9HJs", title: "+700 lojas em menos de 10 anos. O Segredo da Oakberry", channel: "Move On Marcas", hue: 280 },
   { id: "gcJMFjkiUxo", title: "Tanjiro e Tomioka RESPONDEM junto com Akaza no Demon Slayer Vr", channel: "Lanzinho", hue: 250 },
-  { id: "pEVbRhIbf-k", title: "Allianz Park", channel: "Engenharia Curiosa", hue: 200 },
   { id: "YYcxu1lYuM0", title: "1,000 MPH Car vs Mega Ramp in Wobbly Life!", channel: "UnspeakablePlays", hue: 20 },
   { id: "tU3MHFgzg-s", title: "Why Typical Gamer Doesn't have an icon skin.", channel: "Chica", hue: 160 },
   { id: "q6qPZnGMtyY", title: "Brookhaven", channel: "IBella", hue: 160 },
