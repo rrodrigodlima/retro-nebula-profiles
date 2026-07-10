@@ -304,6 +304,63 @@
     position: relative;
     z-index: 1;
   }
+
+  /* Browser-tab style tabs inside a pixel-panel header */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+
+  .browser-tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px 7px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 2px solid hsl(var(--panel-edge-soft));
+    border-bottom: none;
+    max-width: 180px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 120ms ease, transform 120ms ease, color 120ms ease;
+    margin-bottom: -2px; /* overlap header border */
+    color: hsl(0 0% 100%);
+    text-shadow: 1px 1px 0 hsl(var(--panel-edge-soft));
+  }
+  .browser-tab-inactive {
+    background: linear-gradient(180deg,
+      hsl(330 70% 55%),
+      hsl(330 75% 40%));
+    color: hsl(0 0% 100% / 0.75);
+    transform: translateY(2px);
+  }
+  .browser-tab-inactive:hover {
+    background: linear-gradient(180deg,
+      hsl(330 85% 62%),
+      hsl(330 85% 46%));
+    color: hsl(0 0% 100%);
+    transform: translateY(1px);
+  }
+  .browser-tab-active {
+    /* match panel body (bg-card) so tab flows into content */
+    background: hsl(var(--card));
+    color: hsl(var(--hot-pink));
+    text-shadow: 0 0 6px hsl(var(--hot-pink) / 0.6);
+    box-shadow:
+      0 -2px 0 0 hsl(var(--hot-pink)),
+      inset 1px 1px 0 0 hsl(var(--bevel-light) / 0.15);
+    z-index: 2;
+  }
+  .browser-tab-active::after {
+    /* cover the header's bottom border underneath the active tab */
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: hsl(var(--card));
+  }
 }
 
 @keyframes float-slow {
