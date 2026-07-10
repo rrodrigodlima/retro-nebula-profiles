@@ -1,8 +1,16 @@
+import { useState } from "react";
 import { PixelPanel } from "@/components/PixelPanel";
 import { TabbedPixelPanel } from "@/components/TabbedPixelPanel";
 import { BadgesGrid } from "@/components/BadgesGrid";
 import { ProfileSong } from "@/components/ProfileSong";
 import { MessageButton } from "@/components/MessageButton";
+import {
+  VideosGrid,
+  ImagesGrid,
+  VIDEO_TAGS,
+  IMAGE_TAGS,
+  FilterMenu,
+} from "@/components/MediaTabs";
 
 import spaceBg from "@/assets/word-sky-pattern.png";
 import cindAvatar from "@/assets/cind-avatar.png";
@@ -11,6 +19,9 @@ import cindMascot from "@/assets/cind-mascot.png";
 import glitchStar from "@/assets/glitch-star.png";
 
 const Index = () => {
+  const [videoFilters, setVideoFilters] = useState<string[]>([]);
+  const [imageFilters, setImageFilters] = useState<string[]>([]);
+
   return (
     <main className="relative min-h-screen w-full overflow-hidden starfield">
       {/* Pastel pink dithered sky background */}
