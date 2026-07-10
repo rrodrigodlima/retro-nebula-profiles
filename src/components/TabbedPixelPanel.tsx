@@ -5,6 +5,7 @@ export interface PanelTab {
   id: string;
   label: ReactNode;
   content: ReactNode;
+  rightSlot?: ReactNode;
 }
 
 interface TabbedPixelPanelProps {
