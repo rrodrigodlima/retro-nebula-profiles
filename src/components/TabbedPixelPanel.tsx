@@ -5,6 +5,7 @@ export interface PanelTab {
   id: string;
   label: ReactNode;
   content: ReactNode;
+  rightSlot?: ReactNode;
 }
 
 interface TabbedPixelPanelProps {
@@ -55,7 +56,9 @@ export const TabbedPixelPanel = ({
           })}
         </div>
         <span className="flex items-center gap-2 pb-1.5 pl-2">
-          {rightSlot && <span className="text-[8px] opacity-90">{rightSlot}</span>}
+          {(activeTab?.rightSlot ?? rightSlot) && (
+            <span className="text-[8px] opacity-90">{activeTab?.rightSlot ?? rightSlot}</span>
+          )}
           <span className="pixel-header-hearts" aria-hidden>
             <span>♥</span>
             <span>♥</span>
