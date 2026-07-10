@@ -1,4 +1,5 @@
 import { PixelPanel } from "@/components/PixelPanel";
+import { TabbedPixelPanel } from "@/components/TabbedPixelPanel";
 import { BadgesGrid } from "@/components/BadgesGrid";
 import { ProfileSong } from "@/components/ProfileSong";
 import { MessageButton } from "@/components/MessageButton";
